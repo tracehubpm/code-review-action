@@ -9,10 +9,12 @@ merge:
 #  We should create release script that will tag and release Java application
 #  into GitHub releases page.
 release:
-  script: |-
-    echo "#release script is not ready yet"
-    exit -1
+  script: |
+    [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9_]+)?$ ]] || exit -1
+    mvn versions:set "-DnewVersion=${tag}"
+    git commit -am "${tag}"
+    mvn clean install -Prelease
 deploy:
-  script: |-
+  script: |
     echo "There is no such thing as #deploy"
     exit -1
