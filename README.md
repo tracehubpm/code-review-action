@@ -4,7 +4,7 @@
 
 [![mvn](https://github.com/tracehubpm/code-review-action/actions/workflows/mvn.yml/badge.svg)](https://github.com/tracehubpm/code-review-action/actions/workflows/mvn.yml)
 [![codecov](https://codecov.io/gh/tracehubpm/code-review-action/graph/badge.svg?token=JlkMLSJgRo)](https://codecov.io/gh/tracehubpm/code-review-action)
-//docker repo
+[![docker](https://img.shields.io/docker/v/tracehub/code-review-action/latest)](https://hub.docker.com/repository/docker/tracehub/code-review-action/general)
 
 [![Hits-of-Code](https://hitsofcode.com/github/tracehubpm/code-review-action)](https://hitsofcode.com/view/github/tracehubpm/code-review-action)
 [![PDD status](http://www.0pdd.com/svg?name=tracehubpm/code-review-action)](http://www.0pdd.com/p?name=tracehubpm/code-review-action)
