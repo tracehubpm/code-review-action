@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: tracehubpm/code-review-action@latest
+      - uses: docker://docker.io/tracehubpm/tracehubpm/code-review-action:latest
         with:
           openai_token: ${{ secrets.OPENAI_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
