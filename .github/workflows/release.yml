@@ -20,12 +20,12 @@ jobs:
       - name: Build with Maven
         run: |
           mvn clean install -Prelease
-      - name: Push to ghcr.io
+      - name: Push to docker.io
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: tracehub/code-review-action
           tags: ${{ github.ref_name }}, latest
           dockerfile: Dockerfile
-          registry: ghcr.io
+          registry: docker.io
           username: tracehub
           password: ${{ secrets.DOCKER_PASSWORD }}
