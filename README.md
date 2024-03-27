@@ -4,7 +4,7 @@
 
 [![mvn](https://github.com/tracehubpm/code-review-action/actions/workflows/mvn.yml/badge.svg)](https://github.com/tracehubpm/code-review-action/actions/workflows/mvn.yml)
 [![codecov](https://codecov.io/gh/tracehubpm/code-review-action/graph/badge.svg?token=JlkMLSJgRo)](https://codecov.io/gh/tracehubpm/code-review-action)
-//docker repo
+[![docker](https://img.shields.io/docker/v/tracehub/code-review-action/latest)](https://hub.docker.com/repository/docker/tracehub/code-review-action/general)
 
 [![Hits-of-Code](https://hitsofcode.com/github/tracehubpm/code-review-action)](https://hitsofcode.com/view/github/tracehubpm/code-review-action)
 [![PDD status](http://www.0pdd.com/svg?name=tracehubpm/code-review-action)](http://www.0pdd.com/p?name=tracehubpm/code-review-action)
@@ -65,8 +65,10 @@ These are the parameters you can use/override:
 Fork repository, make changes, send us a [pull request](https://www.yegor256.com/2014/04/15/github-guidelines.html).
 We will review your changes and apply them to the `master` branch shortly,
 provided they don't violate our quality standards. To avoid frustration,
-before sending us your pull request please run full build:
+before sending us your pull request please run full maven build:
 
 ```bash
-$ gradle build
+$ mvn clean install -Pjacoco
 ```
+
+You will need Maven 3.8.7+ and Java 17+.
