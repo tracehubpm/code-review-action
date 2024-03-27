@@ -6,7 +6,6 @@ on:
       - '*'
 permissions:
   contents: read
-  packages: write
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -24,9 +23,9 @@ jobs:
       - name: Push to ghcr.io
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: tracehubpm/code-review-action
+          image: tracehub/code-review-action
           tags: ${{ github.ref_name }}, latest
           dockerfile: Dockerfile
           registry: ghcr.io
-          username: tracehubpm
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: tracehub
+          password: ${{ secrets.DOCKER_PASSWORD }}
