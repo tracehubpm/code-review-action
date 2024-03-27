@@ -2,6 +2,14 @@
 [![DevOps By Rultor.com](http://www.rultor.com/b/trarcehubpm/code-review-action)](http://www.rultor.com/p/tracehubpm/code-review-action)
 [![We recommend IntelliJ IDEA](https://www.elegantobjects.org/intellij-idea.svg)](https://www.jetbrains.com/idea/)
 
+[![mvn](https://github.com/tracehubpm/code-review-action/actions/workflows/mvn.yml/badge.svg)](https://github.com/tracehubpm/code-review-action/actions/workflows/mvn.yml)
+[![codecov](https://codecov.io/gh/tracehubpm/code-review-action/graph/badge.svg?token=JlkMLSJgRo)](https://codecov.io/gh/tracehubpm/code-review-action)
+//docker repo
+
+[![Hits-of-Code](https://hitsofcode.com/github/tracehubpm/code-review-action)](https://hitsofcode.com/view/github/tracehubpm/code-review-action)
+[![PDD status](http://www.0pdd.com/svg?name=tracehubpm/code-review-action)](http://www.0pdd.com/p?name=tracehubpm/code-review-action)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/tracehubpm/code-review-action/blob/master/LICENSE.txt)
+
 Code Review Quality Checker.
 
 **Motivation**.
@@ -33,7 +41,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: docker://docker.io/tracehubpm/tracehubpm/code-review-action:latest
+      - uses: docker://tracehub/code-review-action:latest
         with:
           openai_token: ${{ secrets.OPENAI_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
