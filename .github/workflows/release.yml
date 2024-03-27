@@ -28,5 +28,5 @@ jobs:
           tags: ${{ github.ref_name }}, latest
           dockerfile: Dockerfile
           registry: ghcr.io
-          username: h1alexbel
+          username: tracehubpm
           password: ${{ secrets.GITHUB_TOKEN }}
