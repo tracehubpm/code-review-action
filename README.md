@@ -38,6 +38,7 @@ permissions:
   contents: read
 jobs:
   check:
+    if: ${{ github.event.review.state == 'approved' }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
