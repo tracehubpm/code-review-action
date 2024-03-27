@@ -1,0 +1,18 @@
+architect:
+  - h1alexbel
+docker:
+  image: l3r8y/rultor-image:1.0.3
+merge:
+  script: |
+    mvn clean install -Pjacoco --errors -Dstyle.color=never
+# @todo #1:45min Craft release script in rultor configuration.
+#  We should create release script that will tag and release Java application
+#  into GitHub releases page.
+release:
+  script: |-
+    echo "#release script is not ready yet"
+    exit -1
+deploy:
+  script: |-
+    echo "There is no such thing as #deploy"
+    exit -1
