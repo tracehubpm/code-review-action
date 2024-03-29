@@ -41,8 +41,8 @@ public final class Entry {
     public static void main(final String... args) {
         Logger.info(
             Entry.class,
-            "github repo is: %s",
-            System.getenv().get("GITHUB_REPOSITORY")
+            "received event path is: %s",
+            System.getenv().get("GITHUB_EVENT_PATH")
         );
     }
 }
