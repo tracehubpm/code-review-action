@@ -40,6 +40,7 @@ import org.junit.jupiter.api.Test;
 final class ReviewIdsTest {
 
     @Test
+    @SuppressWarnings("PMD.UseUnderscoresInNumericLiterals")
     void collectsAllIds() throws Exception {
         final List<Integer> identifiers = new ReviewIds(
             () -> Json.createReader(
