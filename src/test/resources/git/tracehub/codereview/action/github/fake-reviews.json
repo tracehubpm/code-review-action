@@ -1,0 +1,1172 @@
+[
+  {
+    "id": 1928092753,
+    "node_id": "PRR_kwDOHeCcq85y7FxR",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "@Yanich96 Please, check all the grammar mistakes in this text.",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1928092753",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1928092753"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-11T15:35:05Z",
+    "commit_id": "96e9f05a91df6602ce876ba0fc52a5ccb05e1b34"
+  },
+  {
+    "id": 1933376078,
+    "node_id": "PRR_kwDOHeCcq85zPPpO",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1933376078",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1933376078"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-13T07:56:08Z",
+    "commit_id": "96e9f05a91df6602ce876ba0fc52a5ccb05e1b34"
+  },
+  {
+    "id": 1933400866,
+    "node_id": "PRR_kwDOHeCcq85zPVsi",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1933400866",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1933400866"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-13T08:10:45Z",
+    "commit_id": "96e9f05a91df6602ce876ba0fc52a5ccb05e1b34"
+  },
+  {
+    "id": 1933423242,
+    "node_id": "PRR_kwDOHeCcq85zPbKK",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1933423242",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1933423242"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-13T08:22:40Z",
+    "commit_id": "96e9f05a91df6602ce876ba0fc52a5ccb05e1b34"
+  },
+  {
+    "id": 1934365729,
+    "node_id": "PRR_kwDOHeCcq85zTBQh",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1934365729",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1934365729"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-13T14:56:04Z",
+    "commit_id": "4d30d65b466f5a0eb908c0ef223c01c1678e2794"
+  },
+  {
+    "id": 1936499773,
+    "node_id": "PRR_kwDOHeCcq85zbKQ9",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1936499773",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1936499773"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-14T12:54:15Z",
+    "commit_id": "3cdae01168de2bd22973b336b875f4907b96942f"
+  },
+  {
+    "id": 1937766798,
+    "node_id": "PRR_kwDOHeCcq85zf_mO",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1937766798",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1937766798"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-14T21:41:26Z",
+    "commit_id": "3cdae01168de2bd22973b336b875f4907b96942f"
+  },
+  {
+    "id": 1937769165,
+    "node_id": "PRR_kwDOHeCcq85zgALN",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1937769165",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1937769165"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-14T21:43:33Z",
+    "commit_id": "3cdae01168de2bd22973b336b875f4907b96942f"
+  },
+  {
+    "id": 1938765378,
+    "node_id": "PRR_kwDOHeCcq85zjzZC",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "@Yanich96 Could you please link this PR with the issue you are trying to solve?",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1938765378",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1938765378"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-15T13:04:55Z",
+    "commit_id": "ed510bc8e347a09c2d18bad9bee2064b8ab2dc0c"
+  },
+  {
+    "id": 1941381055,
+    "node_id": "PRR_kwDOHeCcq85ztx-_",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1941381055",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1941381055"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-17T06:17:23Z",
+    "commit_id": "ed510bc8e347a09c2d18bad9bee2064b8ab2dc0c"
+  },
+  {
+    "id": 1942346249,
+    "node_id": "PRR_kwDOHeCcq85zxdoJ",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1942346249",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1942346249"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-18T09:12:38Z",
+    "commit_id": "ed510bc8e347a09c2d18bad9bee2064b8ab2dc0c"
+  },
+  {
+    "id": 1942473609,
+    "node_id": "PRR_kwDOHeCcq85zx8uJ",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1942473609",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1942473609"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-18T09:56:22Z",
+    "commit_id": "ed510bc8e347a09c2d18bad9bee2064b8ab2dc0c"
+  },
+  {
+    "id": 1942543997,
+    "node_id": "PRR_kwDOHeCcq85zyN59",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1942543997",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1942543997"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-18T10:23:05Z",
+    "commit_id": "ed510bc8e347a09c2d18bad9bee2064b8ab2dc0c"
+  },
+  {
+    "id": 1942546920,
+    "node_id": "PRR_kwDOHeCcq85zyOno",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1942546920",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1942546920"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-18T10:24:30Z",
+    "commit_id": "ed510bc8e347a09c2d18bad9bee2064b8ab2dc0c"
+  },
+  {
+    "id": 1943201197,
+    "node_id": "PRR_kwDOHeCcq85z0uWt",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1943201197",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1943201197"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-18T14:32:03Z",
+    "commit_id": "5c2fa3ea03237e7cb26dfb9ef96b9213cde3ed03"
+  },
+  {
+    "id": 1944125139,
+    "node_id": "PRR_kwDOHeCcq85z4P7T",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1944125139",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1944125139"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-18T20:27:39Z",
+    "commit_id": "5c2fa3ea03237e7cb26dfb9ef96b9213cde3ed03"
+  },
+  {
+    "id": 1944149138,
+    "node_id": "PRR_kwDOHeCcq85z4VyS",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1944149138",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1944149138"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-18T20:40:00Z",
+    "commit_id": "5c2fa3ea03237e7cb26dfb9ef96b9213cde3ed03"
+  },
+  {
+    "id": 1944162704,
+    "node_id": "PRR_kwDOHeCcq85z4ZGQ",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1944162704",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1944162704"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-18T20:46:55Z",
+    "commit_id": "5c2fa3ea03237e7cb26dfb9ef96b9213cde3ed03"
+  },
+  {
+    "id": 1945559698,
+    "node_id": "PRR_kwDOHeCcq85z9uKS",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1945559698",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1945559698"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-19T08:56:31Z",
+    "commit_id": "5c2fa3ea03237e7cb26dfb9ef96b9213cde3ed03"
+  },
+  {
+    "id": 1945588726,
+    "node_id": "PRR_kwDOHeCcq85z91P2",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1945588726",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1945588726"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-19T09:09:21Z",
+    "commit_id": "5c2fa3ea03237e7cb26dfb9ef96b9213cde3ed03"
+  },
+  {
+    "id": 1945825481,
+    "node_id": "PRR_kwDOHeCcq85z-vDJ",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1945825481",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1945825481"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-19T11:10:49Z",
+    "commit_id": "ad6e8eb0a85d742e67315650e8dfdff319d9fa56"
+  },
+  {
+    "id": 1957939991,
+    "node_id": "PRR_kwDOHeCcq850s8sX",
+    "user": {
+      "login": "volodya-lombrozo",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/volodya-lombrozo",
+      "html_url": "https://github.com/volodya-lombrozo",
+      "followers_url": "https://api.github.com/users/volodya-lombrozo/followers",
+      "following_url": "https://api.github.com/users/volodya-lombrozo/following{/other_user}",
+      "gists_url": "https://api.github.com/users/volodya-lombrozo/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/volodya-lombrozo/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/volodya-lombrozo/subscriptions",
+      "organizations_url": "https://api.github.com/users/volodya-lombrozo/orgs",
+      "repos_url": "https://api.github.com/users/volodya-lombrozo/repos",
+      "events_url": "https://api.github.com/users/volodya-lombrozo/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/volodya-lombrozo/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "CHANGES_REQUESTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1957939991",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1957939991"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-25T15:07:35Z",
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb"
+  },
+  {
+    "id": 1958081438,
+    "node_id": "PRR_kwDOHeCcq850tfOe",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958081438",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958081438"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-25T15:31:55Z",
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb"
+  },
+  {
+    "id": 1958089833,
+    "node_id": "PRR_kwDOHeCcq850thRp",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958089833",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958089833"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-25T15:35:09Z",
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb"
+  },
+  {
+    "id": 1958101405,
+    "node_id": "PRR_kwDOHeCcq850tkGd",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958101405",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958101405"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-25T15:39:56Z",
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb"
+  },
+  {
+    "id": 1958244013,
+    "node_id": "PRR_kwDOHeCcq850uG6t",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958244013",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958244013"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-25T16:40:34Z",
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb"
+  },
+  {
+    "id": 1958387750,
+    "node_id": "PRR_kwDOHeCcq850uqAm",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958387750",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958387750"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-25T17:34:42Z",
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb"
+  },
+  {
+    "id": 1958419033,
+    "node_id": "PRR_kwDOHeCcq850uxpZ",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958419033",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958419033"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-25T17:50:17Z",
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb"
+  },
+  {
+    "id": 1958445820,
+    "node_id": "PRR_kwDOHeCcq850u4L8",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958445820",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958445820"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-25T18:01:44Z",
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb"
+  },
+  {
+    "id": 1958450376,
+    "node_id": "PRR_kwDOHeCcq850u5TI",
+    "user": {
+      "login": "Yanich96",
+      "id": 51863344,
+      "node_id": "MDQ6VXNlcjUxODYzMzQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51863344?u=0234435a770321c7adf4476f27ef0fc5c1e1aeaf&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Yanich96",
+      "html_url": "https://github.com/Yanich96",
+      "followers_url": "https://api.github.com/users/Yanich96/followers",
+      "following_url": "https://api.github.com/users/Yanich96/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Yanich96/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Yanich96/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Yanich96/subscriptions",
+      "organizations_url": "https://api.github.com/users/Yanich96/orgs",
+      "repos_url": "https://api.github.com/users/Yanich96/repos",
+      "events_url": "https://api.github.com/users/Yanich96/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Yanich96/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958450376",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "NONE",
+    "_links": {
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#pullrequestreview-1958450376"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "submitted_at": "2024-03-25T18:04:11Z",
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb"
+  }
+]
