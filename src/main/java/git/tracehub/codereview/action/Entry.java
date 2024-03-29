@@ -24,6 +24,12 @@
 package git.tracehub.codereview.action;
 
 import com.jcabi.log.Logger;
+import java.io.IOException;
+import java.io.StringReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import javax.json.Json;
+import javax.json.JsonObject;
 
 /**
  * Entry point.
@@ -38,11 +44,18 @@ public final class Entry {
      * Application entry point.
      * @param args Application arguments
      */
-    public static void main(final String... args) {
-        Logger.info(
-            Entry.class,
-            "received event path is: %s",
-            System.getenv().get("GITHUB_EVENT_PATH")
-        );
+    public static void main(final String... args) throws IOException {
+        final JsonObject event = Json.createReader(
+            new StringReader(
+                new String(
+                    Files.readAllBytes(
+                        Paths.get(
+                            System.getenv().get("GITHUB_EVENT_PATH")
+                        )
+                    )
+                )
+            )
+        ).readObject();
+        Logger.info(Entry.class, "event received %s", event.toString());
     }
 }
