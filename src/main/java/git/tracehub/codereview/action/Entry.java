@@ -43,6 +43,7 @@ public final class Entry {
     /**
      * Application entry point.
      * @param args Application arguments
+     * @throws IOException if I/O fails.
      */
     public static void main(final String... args) throws IOException {
         final JsonObject event = Json.createReader(
