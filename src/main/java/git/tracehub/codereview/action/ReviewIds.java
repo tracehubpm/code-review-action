@@ -23,40 +23,33 @@
  */
 package git.tracehub.codereview.action;
 
-import com.jcabi.log.Logger;
-import java.io.IOException;
-import java.io.StringReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import javax.json.Json;
-import javax.json.JsonObject;
+import java.util.List;
+import javax.json.JsonArray;
+import lombok.RequiredArgsConstructor;
+import org.cactoos.Scalar;
+import org.cactoos.list.ListOf;
 
 /**
- * Entry point.
+ * Identifiers collected from all reviews.
  *
  * @since 0.0.0
- * @checkstyle HideUtilityClassConstructorCheck (10 lines)
  */
-@SuppressWarnings("PMD.UseUtilityClass")
-public final class Entry {
+@RequiredArgsConstructor
+public final class ReviewIds implements Scalar<List<Integer>> {
 
     /**
-     * Application entry point.
-     * @param args Application arguments
-     * @throws IOException if I/O fails.
+     * All reviews.
      */
-    public static void main(final String... args) throws IOException {
-        final JsonObject event = Json.createReader(
-            new StringReader(
-                new String(
-                    Files.readAllBytes(
-                        Paths.get(
-                            System.getenv().get("GITHUB_EVENT_PATH")
-                        )
-                    )
-                )
+    private final Scalar<JsonArray> reviews;
+
+    @Override
+    public List<Integer> value() throws Exception {
+        final List<Integer> identifiers = new ListOf<>();
+        this.reviews.value().forEach(
+            value -> identifiers.add(
+                value.asJsonObject().getInt("id")
             )
-        ).readObject();
-        Logger.info(Entry.class, "event received %s", event.toString());
+        );
+        return identifiers;
     }
 }

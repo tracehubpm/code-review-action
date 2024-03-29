@@ -107,11 +107,22 @@ SOFTWARE.
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest</artifactId>
       <version>${hamcrest-core.version}</version>
-      <!-- org.hamcrest:hamcrest is needed at compile scope
+      <!--
+         org.hamcrest:hamcrest is needed at compile scope
          for jcabi-github dependency.
          Please, don't change its scope.
      -->
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.jcabi</groupId>
+      <artifactId>jcabi-http</artifactId>
+      <!-- version from parent POM -->
+    </dependency>
+    <dependency>
+      <groupId>javax.json</groupId>
+      <artifactId>javax.json-api</artifactId>
+      <!-- version from parent POM -->
     </dependency>
     <dependency>
       <groupId>org.cactoos</groupId>
