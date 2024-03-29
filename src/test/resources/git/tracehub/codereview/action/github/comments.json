@@ -1,0 +1,186 @@
+[
+  {
+    "id": 1519878734,
+    "node_id": "PRRC_kwDOHeCcq85al4JO",
+    "url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/comments/1519878734",
+    "pull_request_review_id": 1928092753,
+    "diff_hunk": "@@ -0,0 +1,241 @@\n+---\n+layout: post\n+date: 2024-02-06\n+title: \"Build cache in EO and other build systems\"\n+author: Alekseeva Yana\n+---\n+\n+\n+## Introduction\n+Wasting a lot of time on building a project is a programming problem. At the moment a programmer starts an",
+    "path": "_posts/2024/2024-02-06-about-caching-in-eo.md",
+    "position": null,
+    "original_position": 10,
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb",
+    "user": {
+      "login": "h1alexbel",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/h1alexbel",
+      "html_url": "https://github.com/h1alexbel",
+      "followers_url": "https://api.github.com/users/h1alexbel/followers",
+      "following_url": "https://api.github.com/users/h1alexbel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/h1alexbel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/h1alexbel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/h1alexbel/subscriptions",
+      "organizations_url": "https://api.github.com/users/h1alexbel/orgs",
+      "repos_url": "https://api.github.com/users/h1alexbel/repos",
+      "events_url": "https://api.github.com/users/h1alexbel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/h1alexbel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "@hizmailovich first comment",
+    "created_at": "2024-03-11T15:04:52Z",
+    "updated_at": "2024-03-11T15:35:05Z",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#discussion_r1519878734",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/comments/1519878734"
+      },
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#discussion_r1519878734"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "original_commit_id": "96e9f05a91df6602ce876ba0fc52a5ccb05e1b34",
+    "reactions": {
+      "url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/comments/1519878734/reactions",
+      "total_count": 1,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 1
+    }
+  },
+  {
+    "id": 1519882824,
+    "node_id": "PRRC_kwDOHeCcq85al5JI",
+    "url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/comments/1519882824",
+    "pull_request_review_id": 1928092753,
+    "diff_hunk": "@@ -0,0 +1,241 @@\n+---\n+layout: post\n+date: 2024-02-06\n+title: \"Build cache in EO and other build systems\"\n+author: Alekseeva Yana\n+---\n+\n+\n+## Introduction\n+Wasting a lot of time on building a project is a programming problem. At the moment a programmer starts an",
+    "path": "_posts/2024/2024-02-06-about-caching-in-eo.md",
+    "position": null,
+    "original_position": 10,
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb",
+    "user": {
+      "login": "h1alexbel",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/h1alexbel",
+      "html_url": "https://github.com/h1alexbel",
+      "followers_url": "https://api.github.com/users/h1alexbel/followers",
+      "following_url": "https://api.github.com/users/h1alexbel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/h1alexbel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/h1alexbel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/h1alexbel/subscriptions",
+      "organizations_url": "https://api.github.com/users/h1alexbel/orgs",
+      "repos_url": "https://api.github.com/users/h1alexbel/repos",
+      "events_url": "https://api.github.com/users/h1alexbel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/h1alexbel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "@hizmailovich second comment",
+    "created_at": "2024-03-11T15:07:36Z",
+    "updated_at": "2024-03-11T15:35:06Z",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#discussion_r1519882824",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/comments/1519882824"
+      },
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#discussion_r1519882824"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "original_commit_id": "96e9f05a91df6602ce876ba0fc52a5ccb05e1b34",
+    "in_reply_to_id": 1519878734,
+    "reactions": {
+      "url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/comments/1519882824/reactions",
+      "total_count": 1,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 1
+    }
+  },
+  {
+    "id": 1519926533,
+    "node_id": "PRRC_kwDOHeCcq85amD0F",
+    "url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/comments/1519926533",
+    "pull_request_review_id": 1928092753,
+    "diff_hunk": "@@ -0,0 +1,241 @@\n+---\n+layout: post\n+date: 2024-02-06\n+title: \"Build cache in EO and other build systems\"\n+author: Alekseeva Yana\n+---\n+\n+\n+## Introduction\n+Wasting a lot of time on building a project is a programming problem. At the moment a programmer starts an\n+assembly, he loses focus on a task and spends valuable working time. Different build systems use many tools,\n+helping to assemble a project faster, namely caching, task parallelization, distributed building and much more.\n+The subject of this article is caching, because completed tasks caching allows not to spend resources again. \n+So in [EO](https://github.com/objectionary/eo) caching is used for speeding up programs work.\n+While developing [EO](https://github.com/objectionary/eo) we found caching errors in `eo-maven-plugin`\n+for EO version `0.34.0`. The error occurred, because using a file name and comparing equality of\n+compilation time and caching time is not the most reliable verification. Unit tests were written showing that \n+cache does not work correctly. Also reading a file was necessary for getting a programme name \n+that slowed down an assembly. \n+That we came to conclusion that we need caching with a reliable verification which does not require reading a file\n+from disk. And using cache should save us enough time for building a project.\n+\n+The goal of this article is to research caching in frequently used build systems (`ccache`, `Maven`, `Gradle`)",
+    "path": "_posts/2024/2024-02-06-about-caching-in-eo.md",
+    "position": null,
+    "original_position": 23,
+    "commit_id": "9e6a73624414b68d4b2dc856bab6a984ee39b0bb",
+    "user": {
+      "login": "h1alexbel",
+      "id": 51804353,
+      "node_id": "MDQ6VXNlcjUxODA0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51804353?u=ba6eeac8539c54695c2da9ffe27443686daacda0&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/h1alexbel",
+      "html_url": "https://github.com/h1alexbel",
+      "followers_url": "https://api.github.com/users/h1alexbel/followers",
+      "following_url": "https://api.github.com/users/h1alexbel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/h1alexbel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/h1alexbel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/h1alexbel/subscriptions",
+      "organizations_url": "https://api.github.com/users/h1alexbel/orgs",
+      "repos_url": "https://api.github.com/users/h1alexbel/repos",
+      "events_url": "https://api.github.com/users/h1alexbel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/h1alexbel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "@hizmailovich This sentence might be connected with the previous one: \"The subject of this article is caching.\"",
+    "created_at": "2024-03-11T15:34:26Z",
+    "updated_at": "2024-03-11T15:35:06Z",
+    "html_url": "https://github.com/objectionary/news.eolang.org/pull/58#discussion_r1519926533",
+    "pull_request_url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58",
+    "author_association": "MEMBER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/comments/1519926533"
+      },
+      "html": {
+        "href": "https://github.com/objectionary/news.eolang.org/pull/58#discussion_r1519926533"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/58"
+      }
+    },
+    "original_commit_id": "96e9f05a91df6602ce876ba0fc52a5ccb05e1b34",
+    "reactions": {
+      "url": "https://api.github.com/repos/objectionary/news.eolang.org/pulls/comments/1519926533/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    }
+  }
+]
