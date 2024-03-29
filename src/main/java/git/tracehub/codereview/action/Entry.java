@@ -23,7 +23,11 @@
  */
 package git.tracehub.codereview.action;
 
+import com.jcabi.github.Coordinates;
+import com.jcabi.github.Repo;
+import com.jcabi.github.RtGithub;
 import com.jcabi.log.Logger;
+import git.tracehub.codereview.action.github.JsonPull;
 import java.io.IOException;
 import java.io.StringReader;
 import java.nio.file.Files;
@@ -42,10 +46,29 @@ public final class Entry {
 
     /**
      * Application entry point.
+     *
      * @param args Application arguments
      * @throws IOException if I/O fails.
+     * @todo #2:25min Implement GhIdentity.
+     *  For now we do create RtGithub right here, in the main method.
+     *  Let's implement some sort of "smart" identity that based on
+     *  INPUT_GITHUBTOKEN variable presence inside the environment will
+     *  create corresponding object, either RtGithub (real github instance)
+     *  or MkGithub (mocked github server in memory xml).
+     * @todo #2:30min Develop a prompt to the language model.
+     *  After information is collected (pull request itself, its files,
+     *  and reviews) we can feed it into the model asking what is the quality
+     *  of the following code review.
+     * @todo #2:30min Fetch all the info about pull request we are working with.
+     *  We should fetch all useful information about pull request that we are dealing with:
+     *  title, files (changes), and its author. Let's present this data in JSON/XML format.
+     * @todo #2:30min Formulate action stoppers.
+     *  We should formulate some action stoppers that would not "go further"
+     *  into processing if: pull request is too small (we need a specific number),
+     *  or some other alerts that would be reasonable.
      */
     public static void main(final String... args) throws IOException {
+        final String name = System.getenv().get("GITHUB_REPOSITORY");
         final JsonObject event = Json.createReader(
             new StringReader(
                 new String(
@@ -58,5 +81,10 @@ public final class Entry {
             )
         ).readObject();
         Logger.info(Entry.class, "event received %s", event.toString());
+        final Repo repo = new RtGithub(
+            System.getenv().get("INPUT_GITHUBTOKEN")
+        ).repos().get(new Coordinates.Simple(name));
+        final JsonObject pull = new JsonPull(repo, event).value();
+        Logger.info(Entry.class, "pull request found: %s", pull);
     }
 }
