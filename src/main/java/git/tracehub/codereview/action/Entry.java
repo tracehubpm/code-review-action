@@ -87,7 +87,7 @@ public final class Entry {
             )
         ).readObject();
         Logger.info(Entry.class, "event received %s", event.toString());
-        final String token = System.getenv().get("INPUT_GITHUBTOKEN");
+        final String token = System.getenv().get("INPUT_GITHUB_TOKEN");
         final Repo repo = new RtGithub(token)
             .repos()
             .get(new Coordinates.Simple(name));
