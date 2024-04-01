@@ -25,6 +25,7 @@ package git.tracehub.codereview.action.github;
 
 import com.jcabi.http.Request;
 import com.jcabi.http.request.JdkRequest;
+import lombok.RequiredArgsConstructor;
 import org.cactoos.Scalar;
 
 /**
@@ -32,10 +33,17 @@ import org.cactoos.Scalar;
  *
  * @since 0.0.0
  */
+@RequiredArgsConstructor
 public final class GhRequest implements Scalar<Request> {
+
+    /**
+     * Token.
+     */
+    private final String token;
 
     @Override
     public Request value() throws Exception {
-        return new JdkRequest("https://api.github.com");
+        return new JdkRequest("https://api.github.com")
+            .header("Authorization", String.format("Bearer %s", this.token));
     }
 }
