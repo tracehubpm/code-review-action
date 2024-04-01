@@ -23,40 +23,59 @@
  */
 package git.tracehub.codereview.action.github;
 
+import com.jcabi.github.Pull;
+import com.jcabi.http.Request;
+import java.util.function.Consumer;
 import javax.json.Json;
 import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
+import javax.json.JsonObject;
+import javax.json.JsonValue;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.cactoos.Scalar;
 
 /**
- * All review comment bodies together with its author.
+ * Reviews with comments.
  *
  * @since 0.0.0
  */
 @RequiredArgsConstructor
-public final class Authored implements Comments {
+public final class WithComments implements Scalar<JsonArray> {
 
     /**
-     * Comments.
+     * Origin.
      */
-    private final Comments origin;
+    private final Scalar<JsonArray> origin;
+
+    /**
+     * Request.
+     */
+    private final Scalar<Request> request;
+
+    /**
+     * Pull request.
+     */
+    private final Pull pull;
 
     @Override
-    @SneakyThrows
-    public JsonArray value() {
-        final JsonArrayBuilder builder = Json.createArrayBuilder();
-        this.origin.value().forEach(
-            value -> builder.add(
-                String.format(
-                    "%s: %s",
-                    value.asJsonObject()
-                        .getJsonObject("user")
-                        .getString("login"),
-                    value.asJsonObject().getString("body")
-                )
-            )
+    public JsonArray value() throws Exception {
+        final JsonArray base = this.origin.value();
+        base.forEach(
+            review -> {
+                final JsonObject json = review.asJsonObject();
+                final int identifier = json.getInt("id");
+                json.put(
+                    "comments",
+                    new Authored(
+                        new JsonComments(
+                            this.request,
+                            this.pull,
+                            identifier
+                        )
+                    ).value()
+                );
+            }
         );
-        return builder.build();
+        return base;
     }
 }

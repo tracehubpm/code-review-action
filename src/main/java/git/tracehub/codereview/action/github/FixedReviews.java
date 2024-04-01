@@ -23,47 +23,36 @@
  */
 package git.tracehub.codereview.action.github;
 
-import com.jcabi.github.Pull;
-import com.jcabi.github.Repo;
-import com.jcabi.github.mock.MkGithub;
 import javax.json.Json;
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.core.IsEqual;
-import org.junit.jupiter.api.Test;
+import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
+import lombok.RequiredArgsConstructor;
+import org.cactoos.Scalar;
 
 /**
- * Test case for {@link PullRequest}.
+ * Identifiers collected from all reviews.
  *
  * @since 0.0.0
  */
-final class PullRequestTest {
+@RequiredArgsConstructor
+public final class FixedReviews implements Scalar<JsonArray> {
 
-    @Test
-    void readsJsonPull() throws Exception {
-        final Repo repo = new MkGithub().randomRepo();
-        final Pull created = repo.pulls().create("test", "master", "master");
-        final int expected = created.number();
-        final Pull pull = new PullRequest(
-            repo,
-            Json.createObjectBuilder()
-                .add(
-                    "pull_request",
-                    Json.createObjectBuilder()
-                        .add("number", expected)
-                        .build()
-                )
-                .build()
-        ).value();
-        final int number = pull.number();
-        MatcherAssert.assertThat(
-            String.format(
-                "Received Pull Request number #%s (%s) does not match with expected (%s)",
-                number,
-                pull,
-                expected
-            ),
-            number,
-            new IsEqual<>(expected)
+    /**
+     * All reviews.
+     */
+    private final Scalar<JsonArray> reviews;
+
+    @Override
+    public JsonArray value() throws Exception {
+        final JsonArrayBuilder builder = Json.createArrayBuilder();
+        this.reviews.value().forEach(
+            value -> builder.add(
+                Json.createObjectBuilder()
+                    .add("id", value.asJsonObject().getInt("id"))
+                    .add("body", value.asJsonObject().getString("body"))
+                    .build()
+            )
         );
+        return builder.build();
     }
 }

@@ -25,33 +25,45 @@ package git.tracehub.codereview.action.github;
 
 import com.jcabi.github.Pull;
 import com.jcabi.github.Repo;
-import java.io.IOException;
-import javax.json.JsonObject;
-import lombok.RequiredArgsConstructor;
-import org.cactoos.Scalar;
+import com.jcabi.github.mock.MkGithub;
+import javax.json.Json;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.core.IsEqual;
+import org.junit.jupiter.api.Test;
 
 /**
- * Pull request on GitHub in JSON.
+ * Test case for {@link EventPull}.
  *
  * @since 0.0.0
  */
-@RequiredArgsConstructor
-public final class PullRequest implements Scalar<Pull> {
+final class EventPullTest {
 
-    /**
-     * Repo.
-     */
-    private final Repo repo;
-
-    /**
-     * JSON event.
-     */
-    private final JsonObject event;
-
-    @Override
-    public Pull value() throws IOException {
-        return this.repo.pulls().get(
-            this.event.getJsonObject("pull_request").getInt("number")
+    @Test
+    void readsJsonPull() throws Exception {
+        final Repo repo = new MkGithub().randomRepo();
+        final Pull created = repo.pulls().create("test", "master", "master");
+        final int expected = created.number();
+        final Pull pull = new EventPull(
+            repo,
+            Json.createObjectBuilder()
+                .add(
+                    "pull_request",
+                    Json.createObjectBuilder()
+                        .add("number", expected)
+                        .build()
+                )
+                .build()
+        ).value();
+        final int number = pull.number();
+        MatcherAssert.assertThat(
+            String.format(
+                "Received Pull Request number #%s (%s) does not match with expected (%s)",
+                number,
+                pull,
+                expected
+            ),
+            number,
+            new IsEqual<>(expected)
         );
     }
 }
