@@ -63,9 +63,6 @@ public final class Entry {
      *  After information is collected (pull request itself, its files,
      *  and reviews) we can feed it into the model asking what is the quality
      *  of the following code review.
-     * @todo #2:30min Fetch all the info about pull request we are working with.
-     *  We should fetch all useful information about pull request that we are dealing with:
-     *  title, files (changes), and its author. Let's present this data in JSON/XML format.
      * @todo #2:30min Formulate action stoppers.
      *  We should formulate some action stoppers that would not "go further"
      *  into processing if: pull request is too small (we need a specific number),
