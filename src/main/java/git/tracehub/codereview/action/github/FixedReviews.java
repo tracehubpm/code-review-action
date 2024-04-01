@@ -23,35 +23,36 @@
  */
 package git.tracehub.codereview.action.github;
 
-import com.jcabi.github.Pull;
-import com.jcabi.github.Repo;
-import java.io.IOException;
-import javax.json.JsonObject;
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
 import lombok.RequiredArgsConstructor;
 import org.cactoos.Scalar;
 
 /**
- * Pull request on GitHub in JSON.
+ * Identifiers collected from all reviews.
  *
  * @since 0.0.0
  */
 @RequiredArgsConstructor
-public final class PullRequest implements Scalar<Pull> {
+public final class FixedReviews implements Scalar<JsonArray> {
 
     /**
-     * Repo.
+     * All reviews.
      */
-    private final Repo repo;
-
-    /**
-     * JSON event.
-     */
-    private final JsonObject event;
+    private final Scalar<JsonArray> reviews;
 
     @Override
-    public Pull value() throws IOException {
-        return this.repo.pulls().get(
-            this.event.getJsonObject("pull_request").getInt("number")
+    public JsonArray value() throws Exception {
+        final JsonArrayBuilder builder = Json.createArrayBuilder();
+        this.reviews.value().forEach(
+            value -> builder.add(
+                Json.createObjectBuilder()
+                    .add("id", value.asJsonObject().getInt("id"))
+                    .add("body", value.asJsonObject().getString("body"))
+                    .build()
+            )
         );
+        return builder.build();
     }
 }

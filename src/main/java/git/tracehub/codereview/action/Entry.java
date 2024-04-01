@@ -25,20 +25,18 @@ package git.tracehub.codereview.action;
 
 import com.jcabi.github.Coordinates;
 import com.jcabi.github.Pull;
-import com.jcabi.github.Repo;
 import com.jcabi.github.RtGithub;
 import com.jcabi.log.Logger;
-import git.tracehub.codereview.action.github.Authored;
+import git.tracehub.codereview.action.github.EventPull;
+import git.tracehub.codereview.action.github.FixedReviews;
 import git.tracehub.codereview.action.github.GhRequest;
-import git.tracehub.codereview.action.github.JsonComments;
-import git.tracehub.codereview.action.github.PullRequest;
-import git.tracehub.codereview.action.github.ReviewIds;
-import git.tracehub.codereview.action.github.Reviews;
+import git.tracehub.codereview.action.github.JsonReviews;
+import git.tracehub.codereview.action.github.WithComments;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 import javax.json.Json;
+import javax.json.JsonArray;
 import javax.json.JsonObject;
 
 /**
@@ -65,9 +63,6 @@ public final class Entry {
      *  After information is collected (pull request itself, its files,
      *  and reviews) we can feed it into the model asking what is the quality
      *  of the following code review.
-     * @todo #2:30min Fetch all the info about pull request we are working with.
-     *  We should fetch all useful information about pull request that we are dealing with:
-     *  title, files (changes), and its author. Let's present this data in JSON/XML format.
      * @todo #2:30min Formulate action stoppers.
      *  We should formulate some action stoppers that would not "go further"
      *  into processing if: pull request is too small (we need a specific number),
@@ -88,24 +83,24 @@ public final class Entry {
         ).readObject();
         Logger.info(Entry.class, "event received %s", event.toString());
         final String token = System.getenv().get("INPUT_GITHUB_TOKEN");
-        final Repo repo = new RtGithub(token)
-            .repos()
-            .get(new Coordinates.Simple(name));
-        final Pull pull = new PullRequest(repo, event).value();
-        Logger.info(Entry.class, "pull request found: %s", pull);
-        new ReviewIds(new Reviews(pull, new GhRequest(token))).value()
-            .forEach(
-                review -> {
-                    final List<String> comments = new Authored(
-                        new JsonComments(new GhRequest(token), pull, review)
-                    ).value();
-                    Logger.info(
-                        Entry.class,
-                        "found comments for review #%s: %s",
-                        review,
-                        comments
-                    );
-                }
-            );
+        final Pull.Smart pull = new Pull.Smart(
+            new EventPull(
+                new RtGithub(token).repos().get(new Coordinates.Simple(name)),
+                event
+            ).value()
+        );
+        final String title = pull.title();
+        Logger.info(
+            Entry.class,
+            "pull request found: #%s '%s'",
+            pull.number(),
+            title
+        );
+        final JsonArray reviews = new WithComments(
+            new FixedReviews(new JsonReviews(pull, new GhRequest(token))),
+            new GhRequest(token),
+            pull
+        ).value();
+        Logger.info(Entry.class, "found reviews: %s", reviews);
     }
 }

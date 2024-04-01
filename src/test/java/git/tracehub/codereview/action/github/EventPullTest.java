@@ -23,46 +23,46 @@
  */
 package git.tracehub.codereview.action.github;
 
-import java.io.InputStreamReader;
+import com.jcabi.github.Pull;
+import com.jcabi.github.Repo;
+import com.jcabi.github.mock.MkGithub;
 import javax.json.Json;
-import javax.json.JsonArray;
-import org.cactoos.io.ResourceOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Test;
 
 /**
- * Test case for {@link Authored}.
+ * Test case for {@link EventPull}.
  *
  * @since 0.0.0
  */
-final class AuthoredTest {
+final class EventPullTest {
 
     @Test
-    void collectsAllComments() throws Exception {
-        final JsonArray comments = new Authored(
-            () -> Json.createReader(
-                new InputStreamReader(
-                    new ResourceOf(
-                        "git/tracehub/codereview/action/github/comments.json"
-                    ).stream()
+    void readsJsonPull() throws Exception {
+        final Repo repo = new MkGithub().randomRepo();
+        final Pull created = repo.pulls().create("test", "master", "master");
+        final int expected = created.number();
+        final Pull pull = new EventPull(
+            repo,
+            Json.createObjectBuilder()
+                .add(
+                    "pull_request",
+                    Json.createObjectBuilder()
+                        .add("number", expected)
+                        .build()
                 )
-            ).readArray()
+                .build()
         ).value();
-        final JsonArray expected = Json.createReader(
-            new InputStreamReader(
-                new ResourceOf(
-                    "git/tracehub/codereview/action/github/with-comments.json"
-                ).stream()
-            )
-        ).readArray();
+        final int number = pull.number();
         MatcherAssert.assertThat(
             String.format(
-                "Received comments (%s) do not match with expected (%s)",
-                comments,
+                "Received Pull Request number #%s (%s) does not match with expected (%s)",
+                number,
+                pull,
                 expected
             ),
-            comments,
+            number,
             new IsEqual<>(expected)
         );
     }

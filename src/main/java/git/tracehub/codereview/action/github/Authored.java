@@ -23,11 +23,11 @@
  */
 package git.tracehub.codereview.action.github;
 
-import java.util.List;
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
-import org.cactoos.Scalar;
-import org.cactoos.list.ListOf;
 
 /**
  * All review comment bodies together with its author.
@@ -35,7 +35,7 @@ import org.cactoos.list.ListOf;
  * @since 0.0.0
  */
 @RequiredArgsConstructor
-public final class Authored implements Scalar<List<String>> {
+public final class Authored implements Comments {
 
     /**
      * Comments.
@@ -44,10 +44,10 @@ public final class Authored implements Scalar<List<String>> {
 
     @Override
     @SneakyThrows
-    public List<String> value() {
-        final List<String> bodies = new ListOf<>();
+    public JsonArray value() {
+        final JsonArrayBuilder builder = Json.createArrayBuilder();
         this.origin.value().forEach(
-            value -> bodies.add(
+            value -> builder.add(
                 String.format(
                     "%s: %s",
                     value.asJsonObject()
@@ -57,6 +57,6 @@ public final class Authored implements Scalar<List<String>> {
                 )
             )
         );
-        return bodies;
+        return builder.build();
     }
 }

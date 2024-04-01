@@ -23,33 +23,35 @@
  */
 package git.tracehub.codereview.action.github;
 
-import java.util.List;
-import javax.json.JsonArray;
+import com.jcabi.github.Pull;
+import com.jcabi.github.Repo;
+import java.io.IOException;
+import javax.json.JsonObject;
 import lombok.RequiredArgsConstructor;
 import org.cactoos.Scalar;
-import org.cactoos.list.ListOf;
 
 /**
- * Identifiers collected from all reviews.
+ * Pull request on GitHub in JSON.
  *
  * @since 0.0.0
  */
 @RequiredArgsConstructor
-public final class ReviewIds implements Scalar<List<Integer>> {
+public final class EventPull implements Scalar<Pull> {
 
     /**
-     * All reviews.
+     * Repo.
      */
-    private final Scalar<JsonArray> reviews;
+    private final Repo repo;
+
+    /**
+     * JSON event.
+     */
+    private final JsonObject event;
 
     @Override
-    public List<Integer> value() throws Exception {
-        final List<Integer> identifiers = new ListOf<>();
-        this.reviews.value().forEach(
-            value -> identifiers.add(
-                value.asJsonObject().getInt("id")
-            )
+    public Pull value() throws IOException {
+        return this.repo.pulls().get(
+            this.event.getJsonObject("pull_request").getInt("number")
         );
-        return identifiers;
     }
 }

@@ -37,7 +37,7 @@ import org.cactoos.Scalar;
  * @since 0.0.0
  */
 @RequiredArgsConstructor
-public final class Reviews implements Scalar<JsonArray> {
+public final class JsonReviews implements Scalar<JsonArray> {
 
     /**
      * Pull request.
