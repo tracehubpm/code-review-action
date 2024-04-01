@@ -26,6 +26,7 @@ package git.tracehub.codereview.action.github;
 import java.io.InputStreamReader;
 import java.util.List;
 import javax.json.Json;
+import javax.json.JsonArray;
 import org.cactoos.io.ResourceOf;
 import org.cactoos.list.ListOf;
 import org.hamcrest.MatcherAssert;
@@ -36,13 +37,12 @@ import org.junit.jupiter.api.Test;
  * Test case for {@link Authored}.
  *
  * @since 0.0.0
- * @checkstyle StringLiteralsConcatenationCheck (30 lines)
  */
 final class AuthoredTest {
 
     @Test
     void collectsAllComments() throws Exception {
-        final List<String> comments = new Authored(
+        final JsonArray comments = new Authored(
             () -> Json.createReader(
                 new InputStreamReader(
                     new ResourceOf(
@@ -51,12 +51,13 @@ final class AuthoredTest {
                 )
             ).readArray()
         ).value();
-        final List<String> expected = new ListOf<>(
-            "h1alexbel: @hizmailovich first comment",
-            "h1alexbel: @hizmailovich second comment",
-            "h1alexbel: @hizmailovich This sentence might be connected with the"
-            + " previous one: \"The subject of this article is caching.\""
-        );
+        final JsonArray expected = Json.createReader(
+            new InputStreamReader(
+                new ResourceOf(
+                    "git/tracehub/codereview/action/github/with-comments.json"
+                ).stream()
+            )
+        ).readArray();
         MatcherAssert.assertThat(
             String.format(
                 "Received comments (%s) do not match with expected (%s)",
