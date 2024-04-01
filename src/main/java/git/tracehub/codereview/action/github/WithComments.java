@@ -25,8 +25,10 @@ package git.tracehub.codereview.action.github;
 
 import com.jcabi.github.Pull;
 import com.jcabi.http.Request;
+import javax.json.Json;
 import javax.json.JsonArray;
-import javax.json.JsonObject;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObjectBuilder;
 import lombok.RequiredArgsConstructor;
 import org.cactoos.Scalar;
 
@@ -55,23 +57,26 @@ public final class WithComments implements Scalar<JsonArray> {
 
     @Override
     public JsonArray value() throws Exception {
-        final JsonArray base = this.origin.value();
-        base.forEach(
+        final JsonArrayBuilder builder = Json.createArrayBuilder();
+        this.origin.value().forEach(
             review -> {
-                final JsonObject json = review.asJsonObject();
-                final int identifier = json.getInt("id");
-                json.put(
-                    "comments",
-                    new Authored(
-                        new JsonComments(
-                            this.request,
-                            this.pull,
-                            identifier
-                        )
-                    ).value()
-                );
+                final int identifier = review.asJsonObject().getInt("id");
+                final JsonObjectBuilder entry = Json.createObjectBuilder()
+                    .add("id", identifier)
+                    .add("body", review.asJsonObject().getString("body"))
+                    .add(
+                        "comments",
+                        new Authored(
+                            new JsonComments(
+                                this.request,
+                                this.pull,
+                                identifier
+                            )
+                        ).value()
+                    );
+                builder.add(entry);
             }
         );
-        return base;
+        return builder.build();
     }
 }
