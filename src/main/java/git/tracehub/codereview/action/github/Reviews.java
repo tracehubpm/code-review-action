@@ -57,7 +57,7 @@ public final class Reviews implements Scalar<JsonArray> {
                     .uri()
                     .path(
                         String.format(
-                            "/repos/%s/%s/pulls/%s/reviews",
+                            "repos/%s/%s/pulls/%s/reviews",
                             this.pull.repo().coordinates().user(),
                             this.pull.repo().coordinates().repo(),
                             this.pull.number()
