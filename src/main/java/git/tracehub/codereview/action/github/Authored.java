@@ -25,6 +25,7 @@ package git.tracehub.codereview.action.github;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.cactoos.Scalar;
 import org.cactoos.list.ListOf;
 
@@ -42,7 +43,8 @@ public final class Authored implements Scalar<List<String>> {
     private final Comments origin;
 
     @Override
-    public List<String> value() throws Exception {
+    @SneakyThrows
+    public List<String> value() {
         final List<String> bodies = new ListOf<>();
         this.origin.value().forEach(
             value -> bodies.add(
