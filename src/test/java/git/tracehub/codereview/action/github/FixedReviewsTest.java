@@ -24,11 +24,9 @@
 package git.tracehub.codereview.action.github;
 
 import java.io.InputStreamReader;
-import java.util.List;
 import javax.json.Json;
 import javax.json.JsonArray;
 import org.cactoos.io.ResourceOf;
-import org.cactoos.list.ListOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Test;

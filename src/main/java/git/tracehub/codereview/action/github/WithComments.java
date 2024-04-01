@@ -25,13 +25,9 @@ package git.tracehub.codereview.action.github;
 
 import com.jcabi.github.Pull;
 import com.jcabi.http.Request;
-import java.util.function.Consumer;
-import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
-import javax.json.JsonValue;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import org.cactoos.Scalar;
 
 /**
