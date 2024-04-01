@@ -87,16 +87,17 @@ public final class Entry {
             )
         ).readObject();
         Logger.info(Entry.class, "event received %s", event.toString());
-        final Repo repo = new RtGithub(
-            System.getenv().get("INPUT_GITHUBTOKEN")
-        ).repos().get(new Coordinates.Simple(name));
+        final String token = System.getenv().get("INPUT_GITHUBTOKEN");
+        final Repo repo = new RtGithub(token)
+            .repos()
+            .get(new Coordinates.Simple(name));
         final Pull pull = new PullRequest(repo, event).value();
         Logger.info(Entry.class, "pull request found: %s", pull);
-        new ReviewIds(new Reviews(pull, new GhRequest())).value()
+        new ReviewIds(new Reviews(pull, new GhRequest(token))).value()
             .forEach(
                 review -> {
                     final List<String> comments = new Authored(
-                        new JsonComments(new GhRequest(), pull, review)
+                        new JsonComments(new GhRequest(token), pull, review)
                     ).value();
                     Logger.info(
                         Entry.class,
