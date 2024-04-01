@@ -24,14 +24,20 @@
 package git.tracehub.codereview.action;
 
 import com.jcabi.github.Coordinates;
+import com.jcabi.github.Pull;
 import com.jcabi.github.Repo;
 import com.jcabi.github.RtGithub;
 import com.jcabi.log.Logger;
-import git.tracehub.codereview.action.github.JsonPull;
-import java.io.IOException;
+import git.tracehub.codereview.action.github.Authored;
+import git.tracehub.codereview.action.github.GhRequest;
+import git.tracehub.codereview.action.github.JsonComments;
+import git.tracehub.codereview.action.github.PullRequest;
+import git.tracehub.codereview.action.github.ReviewIds;
+import git.tracehub.codereview.action.github.Reviews;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 import javax.json.Json;
 import javax.json.JsonObject;
 
@@ -48,7 +54,7 @@ public final class Entry {
      * Application entry point.
      *
      * @param args Application arguments
-     * @throws IOException if I/O fails.
+     * @throws Exception if something went wrong.
      * @todo #2:25min Implement GhIdentity.
      *  For now we do create RtGithub right here, in the main method.
      *  Let's implement some sort of "smart" identity that based on
@@ -67,7 +73,7 @@ public final class Entry {
      *  into processing if: pull request is too small (we need a specific number),
      *  or some other alerts that would be reasonable.
      */
-    public static void main(final String... args) throws IOException {
+    public static void main(final String... args) throws Exception {
         final String name = System.getenv().get("GITHUB_REPOSITORY");
         final JsonObject event = Json.createReader(
             new StringReader(
@@ -84,7 +90,21 @@ public final class Entry {
         final Repo repo = new RtGithub(
             System.getenv().get("INPUT_GITHUBTOKEN")
         ).repos().get(new Coordinates.Simple(name));
-        final JsonObject pull = new JsonPull(repo, event).value();
+        final Pull pull = new PullRequest(repo, event).value();
         Logger.info(Entry.class, "pull request found: %s", pull);
+        new ReviewIds(new Reviews(pull, new GhRequest())).value()
+            .forEach(
+                review -> {
+                    final List<String> comments = new Authored(
+                        new JsonComments(new GhRequest(), pull, review)
+                    ).value();
+                    Logger.info(
+                        Entry.class,
+                        "found comments for review #%s: %s",
+                        review,
+                        comments
+                    );
+                }
+            );
     }
 }

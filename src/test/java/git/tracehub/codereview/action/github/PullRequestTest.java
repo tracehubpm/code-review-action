@@ -27,46 +27,42 @@ import com.jcabi.github.Pull;
 import com.jcabi.github.Repo;
 import com.jcabi.github.mock.MkGithub;
 import javax.json.Json;
-import javax.json.JsonObject;
-import org.cactoos.io.ResourceOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Test;
 
 /**
- * Test case for {@link JsonPull}.
+ * Test case for {@link PullRequest}.
  *
  * @since 0.0.0
  */
-final class JsonPullTest {
+final class PullRequestTest {
 
     @Test
     void readsJsonPull() throws Exception {
         final Repo repo = new MkGithub().randomRepo();
         final Pull created = repo.pulls().create("test", "master", "master");
-        final JsonObject pull = new JsonPull(
+        final int expected = created.number();
+        final Pull pull = new PullRequest(
             repo,
             Json.createObjectBuilder()
                 .add(
                     "pull_request",
                     Json.createObjectBuilder()
-                        .add("number", created.number())
+                        .add("number", expected)
                         .build()
                 )
                 .build()
         ).value();
-        final JsonObject expected = Json.createReader(
-            new ResourceOf(
-                "git/tracehub/codereview/action/github/pull.json"
-            ).stream()
-        ).readObject();
+        final int number = pull.number();
         MatcherAssert.assertThat(
             String.format(
-                "Received JSON (%s) does not match with expected (%s)",
+                "Received Pull Request number #%s (%s) does not match with expected (%s)",
+                number,
                 pull,
                 expected
             ),
-            pull,
+            number,
             new IsEqual<>(expected)
         );
     }

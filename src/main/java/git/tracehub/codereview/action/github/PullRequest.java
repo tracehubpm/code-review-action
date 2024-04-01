@@ -23,40 +23,35 @@
  */
 package git.tracehub.codereview.action.github;
 
-import java.util.List;
+import com.jcabi.github.Pull;
+import com.jcabi.github.Repo;
+import java.io.IOException;
+import javax.json.JsonObject;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import org.cactoos.Scalar;
-import org.cactoos.list.ListOf;
 
 /**
- * All review comment bodies together with its author.
+ * Pull request on GitHub in JSON.
  *
  * @since 0.0.0
  */
 @RequiredArgsConstructor
-public final class Authored implements Scalar<List<String>> {
+public final class PullRequest implements Scalar<Pull> {
 
     /**
-     * Comments.
+     * Repo.
      */
-    private final Comments origin;
+    private final Repo repo;
+
+    /**
+     * JSON event.
+     */
+    private final JsonObject event;
 
     @Override
-    @SneakyThrows
-    public List<String> value() {
-        final List<String> bodies = new ListOf<>();
-        this.origin.value().forEach(
-            value -> bodies.add(
-                String.format(
-                    "%s: %s",
-                    value.asJsonObject()
-                        .getJsonObject("user")
-                        .getString("login"),
-                    value.asJsonObject().getString("body")
-                )
-            )
+    public Pull value() throws IOException {
+        return this.repo.pulls().get(
+            this.event.getJsonObject("pull_request").getInt("number")
         );
-        return bodies;
     }
 }

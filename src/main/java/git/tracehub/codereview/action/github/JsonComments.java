@@ -23,40 +23,58 @@
  */
 package git.tracehub.codereview.action.github;
 
-import java.util.List;
+import com.jcabi.github.Pull;
+import com.jcabi.http.Request;
+import java.io.StringReader;
+import javax.json.Json;
+import javax.json.JsonArray;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.cactoos.Scalar;
-import org.cactoos.list.ListOf;
 
 /**
- * All review comment bodies together with its author.
+ * All review comments, presented in JSON format.
  *
  * @since 0.0.0
  */
 @RequiredArgsConstructor
-public final class Authored implements Scalar<List<String>> {
+public final class JsonComments implements Comments {
 
     /**
-     * Comments.
+     * Request.
      */
-    private final Comments origin;
+    private final Scalar<Request> request;
+
+    /**
+     * Pull request.
+     */
+    private final Pull pull;
+
+    /**
+     * Review ID.
+     */
+    private final int review;
 
     @Override
     @SneakyThrows
-    public List<String> value() {
-        final List<String> bodies = new ListOf<>();
-        this.origin.value().forEach(
-            value -> bodies.add(
-                String.format(
-                    "%s: %s",
-                    value.asJsonObject()
-                        .getJsonObject("user")
-                        .getString("login"),
-                    value.asJsonObject().getString("body")
-                )
+    public JsonArray value() {
+        return Json.createReader(
+            new StringReader(
+                this.request.value()
+                    .uri()
+                    .path(
+                        String.format(
+                            "repos/%s/%s/pulls/%s/reviews/%s/comments",
+                            this.pull.repo().coordinates().user(),
+                            this.pull.repo().coordinates().repo(),
+                            this.pull.number(),
+                            this.review
+                        )
+                    )
+                    .back()
+                    .fetch()
+                    .body()
             )
-        );
-        return bodies;
+        ).readArray();
     }
 }

@@ -23,34 +23,19 @@
  */
 package git.tracehub.codereview.action.github;
 
-import com.jcabi.github.Repo;
-import java.io.IOException;
-import javax.json.JsonObject;
-import lombok.RequiredArgsConstructor;
+import com.jcabi.http.Request;
+import com.jcabi.http.request.JdkRequest;
 import org.cactoos.Scalar;
 
 /**
- * Pull request on GitHub in JSON.
+ * Request to GitHub API.
  *
  * @since 0.0.0
  */
-@RequiredArgsConstructor
-public final class JsonPull implements Scalar<JsonObject> {
-
-    /**
-     * Repo.
-     */
-    private final Repo repo;
-
-    /**
-     * JSON event.
-     */
-    private final JsonObject event;
+public final class GhRequest implements Scalar<Request> {
 
     @Override
-    public JsonObject value() throws IOException {
-        return this.repo.pulls().get(
-            this.event.getJsonObject("pull_request").getInt("number")
-        ).json();
+    public Request value() throws Exception {
+        return new JdkRequest("https://api.github.com");
     }
 }
