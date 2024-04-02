@@ -53,16 +53,13 @@ public final class Entry {
      *
      * @param args Application arguments
      * @throws Exception if something went wrong.
-     * @todo #2:25min Implement GhIdentity.
-     *  For now we do create RtGithub right here, in the main method.
-     *  Let's implement some sort of "smart" identity that based on
-     *  INPUT_GITHUBTOKEN variable presence inside the environment will
-     *  create corresponding object, either RtGithub (real github instance)
-     *  or MkGithub (mocked github server in memory xml).
      * @todo #2:30min Develop a prompt to the language model.
      *  After information is collected (pull request itself, its files,
      *  and reviews) we can feed it into the model asking what is the quality
      *  of the following code review.
+     * @todo #2:25min Fetch pull request approver to post suggestions.
+     *  To post suggestion to the reviewer, we need to fetch the GitHub login
+     *  of person who approved pull request. Don't forget to remove this puzzle.
      * @todo #2:30min Formulate action stoppers.
      *  We should formulate some action stoppers that would not "go further"
      *  into processing if: pull request is too small (we need a specific number),
