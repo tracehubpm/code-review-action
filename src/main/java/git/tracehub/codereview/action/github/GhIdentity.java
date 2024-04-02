@@ -34,7 +34,11 @@ import org.cactoos.Scalar;
  * GitHub's identity.
  *
  * @since 0.0.0
- * @todo from tracehub
+ * @todo #22:90min Pull GhIdentity from /tracehub repo.
+ *  We have the same object in tracehubpm/tracehub repo, take a look
+ *  <a href="https://github.com/tracehubpm/tracehub/blob/master/src/main/java/git/tracehub/identity/GhIdentity.java">here</a>.
+ *  Let's push this object into separate repository and make it more reusable.
+ *  Don't forget to remove this puzzle.
  */
 public final class GhIdentity implements Scalar<Github> {
 
