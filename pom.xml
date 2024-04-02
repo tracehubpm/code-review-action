@@ -314,51 +314,6 @@ SOFTWARE.
   </build>
   <profiles>
     <profile>
-      <id>simulation</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>${maven-surefire-plugin.version}</version>
-            <configuration>
-              <includes>
-                <include>**/*Spec.*</include>
-                <include>**/*Test.*</include>
-              </includes>
-              <excludedGroups>mock</excludedGroups>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>simulation-integration-test</id>
-                <goals>
-                  <goal>integration-test</goal>
-                </goals>
-                <configuration>
-                  <groups>simulation</groups>
-                  <systemPropertyVariables>
-                    <Tracehub-GitHubToken>${Tracehub-GitHubToken}</Tracehub-GitHubToken>
-                  </systemPropertyVariables>
-                </configuration>
-              </execution>
-              <execution>
-                <id>simulation-verify</id>
-                <goals>
-                  <goal>verify</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
       <id>release</id>
       <activation>
         <activeByDefault>false</activeByDefault>
@@ -459,6 +414,51 @@ SOFTWARE.
                     </rule>
                   </rules>
                 </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>simulation</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${maven-surefire-plugin.version}</version>
+            <configuration>
+              <includes>
+                <include>**/*Spec.*</include>
+                <include>**/*Test.*</include>
+              </includes>
+              <excludedGroups>mock</excludedGroups>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>simulation-integration-test</id>
+                <goals>
+                  <goal>integration-test</goal>
+                </goals>
+                <configuration>
+                  <groups>simulation</groups>
+                  <systemPropertyVariables>
+                    <INPUT_GITHUB_TOKEN>${INPUT_GITHUB_TOKEN}</INPUT_GITHUB_TOKEN>
+                  </systemPropertyVariables>
+                </configuration>
+              </execution>
+              <execution>
+                <id>simulation-verify</id>
+                <goals>
+                  <goal>verify</goal>
+                </goals>
               </execution>
             </executions>
           </plugin>

@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1971184892,
+    "node_id": "PRR_kwDOLEBZDc51feT8",
+    "user": {
+      "login": "h1alexbel",
+      "id": 83453843,
+      "node_id": "MDQ6VXNlcjgzNDUzODQz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83453843?u=de0436f627b8c88a43ee37dedbb0643718f8d05f&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/h1alexbel",
+      "html_url": "https://github.com/h1alexbel",
+      "followers_url": "https://api.github.com/users/h1alexbel/followers",
+      "following_url": "https://api.github.com/users/h1alexbel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/h1alexbel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/h1alexbel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/h1alexbel/subscriptions",
+      "organizations_url": "https://api.github.com/users/h1alexbel/orgs",
+      "repos_url": "https://api.github.com/users/h1alexbel/repos",
+      "events_url": "https://api.github.com/users/h1alexbel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/h1alexbel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Just one",
+    "state": "APPROVED",
+    "html_url": "https://github.com/h1alexbel/test/pull/311#pullrequestreview-1971184892",
+    "pull_request_url": "https://api.github.com/repos/h1alexbel/test/pulls/311",
+    "author_association": "OWNER",
+    "_links": {
+      "html": {
+        "href": "https://github.com/h1alexbel/test/pull/311#pullrequestreview-1971184892"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/h1alexbel/test/pulls/311"
+      }
+    },
+    "submitted_at": "2024-04-01T12:37:28Z",
+    "commit_id": "9f294a8758896c81cf4e9e3414c4ae9cf640fd4a"
+  }
+]
