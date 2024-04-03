@@ -61,7 +61,7 @@ public final class WithComments implements Scalar<JsonArray> {
         this.origin.value().forEach(
             review -> {
                 final JsonObjectBuilder entry = Json.createObjectBuilder()
-                    .add("body", review.asJsonObject().getString("body"))
+                    .add("submitted", review.asJsonObject().getString("body"))
                     .add(
                         "comments",
                         new Authored(
