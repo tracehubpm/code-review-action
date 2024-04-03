@@ -24,12 +24,13 @@
 package it;
 
 import com.jcabi.github.Coordinates;
-import com.jcabi.github.Github;
 import com.jcabi.github.Pull;
 import com.yegor256.WeAreOnline;
+import git.tracehub.codereview.action.github.FixedReviews;
 import git.tracehub.codereview.action.github.GhIdentity;
 import git.tracehub.codereview.action.github.GhRequest;
 import git.tracehub.codereview.action.github.JsonReviews;
+import git.tracehub.codereview.action.github.WithComments;
 import io.github.h1alexbel.ghquota.Quota;
 import java.io.InputStreamReader;
 import javax.json.Json;
@@ -43,11 +44,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 /**
- * Integration test case for {@link JsonReviews}.
+ * Integration test case for {@link WithComments}.
  *
  * @since 0.0.0
  */
-final class JsonReviewsITCase {
+final class WithCommentsITCase {
 
     @ParameterizedTest
     @ValueSource(
@@ -59,21 +60,21 @@ final class JsonReviewsITCase {
     )
     @Tag("simulation")
     @ExtendWith({WeAreOnline.class, Quota.class})
-    void fetchesReviews(final int pid) throws Exception {
-        final Github github = new GhIdentity().value();
-        final Pull pull = github.repos()
-            .get(new Coordinates.Simple("h1alexbel/test"))
-            .pulls()
-            .get(pid);
-        final JsonArray reviews = new JsonReviews(
-            pull,
-            new GhRequest(System.getProperty("INPUT_GITHUB_TOKEN"))
+    void appendsComments(final int pid) throws Exception {
+        final String token = System.getProperty("INPUT_GITHUB_TOKEN");
+        final Pull pull = new GhIdentity().value()
+            .repos().get(new Coordinates.Simple("h1alexbel/test"))
+            .pulls().get(pid);
+        final JsonArray reviews = new WithComments(
+            new FixedReviews(new JsonReviews(pull, new GhRequest(token))),
+            new GhRequest(token),
+            pull
         ).value();
         final JsonArray expected = Json.createReader(
             new InputStreamReader(
                 new ResourceOf(
                     String.format(
-                        "it/%d-reviews.json",
+                        "it/%d-with-comments.json",
                         pid
                     )
                 ).stream()
@@ -81,7 +82,7 @@ final class JsonReviewsITCase {
         ).readArray();
         MatcherAssert.assertThat(
             String.format(
-                "Received reviews (%s) do not match with expected (%s)",
+                "Received JSON (%s) does not match with expected (%s)",
                 reviews,
                 expected
             ),
