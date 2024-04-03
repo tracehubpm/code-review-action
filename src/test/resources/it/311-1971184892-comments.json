@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1546279407,
+    "node_id": "PRRC_kwDOLEBZDc5cKlnv",
+    "url": "https://api.github.com/repos/h1alexbel/test/pulls/comments/1546279407",
+    "pull_request_review_id": 1971184892,
+    "diff_hunk": "@@ -0,0 +1 @@\n+label: Test for response with new pull request",
+    "path": ".trace/jobs/test-for-response-with-new-pull-request.yml",
+    "position": 1,
+    "original_position": 1,
+    "commit_id": "9f294a8758896c81cf4e9e3414c4ae9cf640fd4a",
+    "user": {
+      "login": "h1alexbel",
+      "id": 83453843,
+      "node_id": "MDQ6VXNlcjgzNDUzODQz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83453843?u=de0436f627b8c88a43ee37dedbb0643718f8d05f&v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/h1alexbel",
+      "html_url": "https://github.com/h1alexbel",
+      "followers_url": "https://api.github.com/users/h1alexbel/followers",
+      "following_url": "https://api.github.com/users/h1alexbel/following{/other_user}",
+      "gists_url": "https://api.github.com/users/h1alexbel/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/h1alexbel/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/h1alexbel/subscriptions",
+      "organizations_url": "https://api.github.com/users/h1alexbel/orgs",
+      "repos_url": "https://api.github.com/users/h1alexbel/repos",
+      "events_url": "https://api.github.com/users/h1alexbel/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/h1alexbel/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "body": "Just one",
+    "created_at": "2024-04-01T12:37:17Z",
+    "updated_at": "2024-04-01T12:37:28Z",
+    "html_url": "https://github.com/h1alexbel/test/pull/311#discussion_r1546279407",
+    "pull_request_url": "https://api.github.com/repos/h1alexbel/test/pulls/311",
+    "author_association": "OWNER",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/h1alexbel/test/pulls/comments/1546279407"
+      },
+      "html": {
+        "href": "https://github.com/h1alexbel/test/pull/311#discussion_r1546279407"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/h1alexbel/test/pulls/311"
+      }
+    },
+    "original_commit_id": "9f294a8758896c81cf4e9e3414c4ae9cf640fd4a",
+    "reactions": {
+      "url": "https://api.github.com/repos/h1alexbel/test/pulls/comments/1546279407/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    }
+  }
+]
