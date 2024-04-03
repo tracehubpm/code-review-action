@@ -59,7 +59,7 @@ final class JsonCommentsITCase {
         final JsonArray comments = new JsonComments(
             new GhRequest(token),
             pull,
-            1971184892
+            1_971_184_892
         ).value();
         final JsonArray expected = Json.createReader(
             new InputStreamReader(
@@ -70,9 +70,9 @@ final class JsonCommentsITCase {
         ).readArray();
         MatcherAssert.assertThat(
             String.format(
-            "Received comments (%s) do not match with expected (%s)",
-              comments,
-              expected
+                "Received comments (%s) do not match with expected (%s)",
+                comments,
+                expected
             ),
             comments,
             new IsEqual<>(expected)
