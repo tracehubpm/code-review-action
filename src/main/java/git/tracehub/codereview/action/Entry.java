@@ -57,9 +57,6 @@ public final class Entry {
      *  After information is collected (pull request itself, its files,
      *  and reviews) we can feed it into the model asking what is the quality
      *  of the following code review.
-     * @todo #2:25min Fetch pull request approver to post suggestions.
-     *  To post suggestion to the reviewer, we need to fetch the GitHub login
-     *  of person who approved pull request. Don't forget to remove this puzzle.
      * @todo #2:30min Formulate action stoppers.
      *  We should formulate some action stoppers that would not "go further"
      *  into processing if: pull request is too small (we need a specific number),
@@ -78,6 +75,8 @@ public final class Entry {
                 )
             )
         ).readObject();
+        final String approver = event.getJsonObject("sender").getString("login");
+        Logger.info(Entry.class, "approver is %s", approver);
         Logger.info(Entry.class, "event received %s", event.toString());
         final String token = System.getenv().get("INPUT_GITHUB_TOKEN");
         final Pull.Smart pull = new Pull.Smart(
