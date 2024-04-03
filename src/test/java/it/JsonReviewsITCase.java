@@ -38,8 +38,9 @@ import org.cactoos.io.ResourceOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 /**
  * Integration test case for {@link JsonReviews}.
@@ -48,15 +49,22 @@ import org.junit.jupiter.api.extension.ExtendWith;
  */
 final class JsonReviewsITCase {
 
-    @Test
+    @ParameterizedTest
+    @ValueSource(
+        ints = {
+            311,
+            312,
+            313
+        }
+    )
     @Tag("simulation")
     @ExtendWith({WeAreOnline.class, Quota.class})
-    void fetchesReviews() throws Exception {
+    void fetchesReviews(final int pid) throws Exception {
         final Github github = new GhIdentity().value();
         final Pull pull = github.repos()
             .get(new Coordinates.Simple("h1alexbel/test"))
             .pulls()
-            .get(311);
+            .get(pid);
         final JsonArray reviews = new JsonReviews(
             pull,
             new GhRequest(System.getProperty("INPUT_GITHUB_TOKEN"))
@@ -64,7 +72,10 @@ final class JsonReviewsITCase {
         final JsonArray expected = Json.createReader(
             new InputStreamReader(
                 new ResourceOf(
-                    "it/311-reviews.json"
+                    String.format(
+                        "it/%d-reviews.json",
+                        pid
+                    )
                 ).stream()
             )
         ).readArray();
