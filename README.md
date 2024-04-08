@@ -70,4 +70,15 @@ before sending us your pull request please run full maven build:
 $ mvn clean install -Pjacoco
 ```
 
-You will need Maven 3.8.7+ and Java 17+.
+If you want to run simulation tests (annotated with `@Tag("simulation")`):
+
+```shell
+$ mvn clean install -Psimulation -DINPUT_GITHUB_TOKEN=...
+```
+
+Provide your GitHub [token](https://github.com/settings/tokens) with write permissions
+to the next repositories:
+
+* [h1alexbel/test](https://github.com/h1alexbel/test)
+
+You will need Maven 3.8+ and Java 17+.
