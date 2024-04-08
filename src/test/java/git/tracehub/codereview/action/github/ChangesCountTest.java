@@ -50,13 +50,12 @@ final class ChangesCountTest {
     void calculatesChanges(@Mock final Pull mock) throws Exception {
         final List<JsonObject> files = new ListOf<>();
         Json.createReader(
-                new InputStreamReader(
-                    new ResourceOf(
-                        "git/tracehub/codereview/action/github/files.json"
-                    ).stream()
-                )
-            ).readArray()
-            .forEach(value -> files.add(value.asJsonObject()));
+            new InputStreamReader(
+                new ResourceOf(
+                    "git/tracehub/codereview/action/github/files.json"
+                ).stream()
+            )
+        ).readArray().forEach(value -> files.add(value.asJsonObject()));
         Mockito.when(mock.files()).thenReturn(files);
         final int changes = new ChangesCount(mock).value();
         final int expected = 31;
