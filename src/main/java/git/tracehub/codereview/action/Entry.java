@@ -27,6 +27,7 @@ import com.jcabi.github.Coordinates;
 import com.jcabi.github.Pull;
 import com.jcabi.github.RtGithub;
 import com.jcabi.log.Logger;
+import git.tracehub.codereview.action.github.ChangesCount;
 import git.tracehub.codereview.action.github.EventPull;
 import git.tracehub.codereview.action.github.FixedReviews;
 import git.tracehub.codereview.action.github.GhRequest;
@@ -57,10 +58,6 @@ public final class Entry {
      *  After information is collected (pull request itself, its files,
      *  and reviews) we can feed it into the model asking what is the quality
      *  of the following code review.
-     * @todo #2:30min Formulate action stoppers.
-     *  We should formulate some action stoppers that would not "go further"
-     *  into processing if: pull request is too small (we need a specific number),
-     *  or some other alerts that would be reasonable.
      */
     public static void main(final String... args) throws Exception {
         final String name = System.getenv().get("GITHUB_REPOSITORY");
@@ -92,6 +89,24 @@ public final class Entry {
             pull.number(),
             title
         );
+        final int min = Integer.parseInt(
+            System.getenv().get("INPUT_MIN_LINES")
+        );
+        if (min != 0) {
+            final int changes = new ChangesCount(pull).value();
+            if (min > changes) {
+                Logger.info(
+                    Entry.class,
+                    "Skipping pull request #%s since changes count %d less than %s",
+                    pull.number(),
+                    changes,
+                    min
+                );
+            }
+        }
+        // pr: title, files, author
+        // review: [ {submitted: "", comments: []} ]
+
         final JsonArray reviews = new WithComments(
             new FixedReviews(new JsonReviews(pull, new GhRequest(token))),
             new GhRequest(token),
