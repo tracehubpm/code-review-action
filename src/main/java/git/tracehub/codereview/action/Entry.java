@@ -104,9 +104,6 @@ public final class Entry {
                 );
             }
         }
-        // pr: title, files, author
-        // review: [ {submitted: "", comments: []} ]
-
         final JsonArray reviews = new WithComments(
             new FixedReviews(new JsonReviews(pull, new GhRequest(token))),
             new GhRequest(token),
