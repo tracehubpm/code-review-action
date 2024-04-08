@@ -47,6 +47,31 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+### Skip Pull Requests by the amount of lines
+
+In order to skip "too small" pull requests, you can configure `min_lines`
+parameter:
+
+```yml
+name: code-review
+on:
+ pull_request_review:
+   types: submitted
+permissions:
+  pull-requests: write
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker://tracehub/code-review-action:latest
+        with:
+          openai_token: ${{ secrets.OPENAI_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          min_lines: 15
+```
+
 ### Configurations
 
 Code review quality checker can be configured the way you want.
@@ -58,6 +83,9 @@ These are the parameters you can use/override:
 * `deepinfra_token`: Deep Infra API key, you can obtain it [here](https://deepinfra.com/dash/api_keys).
 * `deepinfra_model`: Deep Infra API model, the default one is `Phind/Phind-CodeLlama-34B-v2`,
   check out [all available models](https://deepinfra.com/models/text-generation).
+* `min_lines`: Minimal amount of lines in the pull request to get analyzed
+by this action, pull requests with fewer lines than provided `min_size`
+won't be processed.
 
 ### How to contribute
 
