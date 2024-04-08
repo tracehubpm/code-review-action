@@ -1,0 +1,50 @@
+[
+  {
+    "sha": "098315399517c4c52438495159c0e4ba899e290d",
+    "filename": "eo-maven-plugin/src/main/resources/org/eolang/maven/pre/to-java.xsl",
+    "status": "modified",
+    "additions": 0,
+    "deletions": 3,
+    "changes": 3,
+    "blob_url": "https://github.com/objectionary/eo/blob/930a59f1587884c00d473e3daf749c7ad729dacb/eo-maven-plugin%2Fsrc%2Fmain%2Fresources%2Forg%2Feolang%2Fmaven%2Fpre%2Fto-java.xsl",
+    "raw_url": "https://github.com/objectionary/eo/raw/930a59f1587884c00d473e3daf749c7ad729dacb/eo-maven-plugin%2Fsrc%2Fmain%2Fresources%2Forg%2Feolang%2Fmaven%2Fpre%2Fto-java.xsl",
+    "contents_url": "https://api.github.com/repos/objectionary/eo/contents/eo-maven-plugin%2Fsrc%2Fmain%2Fresources%2Forg%2Feolang%2Fmaven%2Fpre%2Fto-java.xsl?ref=930a59f1587884c00d473e3daf749c7ad729dacb",
+    "patch": "@@ -419,9 +419,6 @@ SOFTWARE.\n       <xsl:when test=\"$method='&amp;'\">\n         <xsl:text>σ</xsl:text>\n       </xsl:when>\n-      <xsl:when test=\"$method='&lt;'\">\n-        <xsl:text>ν</xsl:text>\n-      </xsl:when>\n       <xsl:otherwise>\n         <xsl:value-of select=\"eo:attr-name($method)\"/>\n       </xsl:otherwise>"
+  },
+  {
+    "sha": "fde8d21a66e967d447d9ce79a39ef11b1772152a",
+    "filename": "eo-parser/src/test/resources/org/eolang/parser/packs/add-locators.yaml",
+    "status": "modified",
+    "additions": 5,
+    "deletions": 6,
+    "changes": 11,
+    "blob_url": "https://github.com/objectionary/eo/blob/930a59f1587884c00d473e3daf749c7ad729dacb/eo-parser%2Fsrc%2Ftest%2Fresources%2Forg%2Feolang%2Fparser%2Fpacks%2Fadd-locators.yaml",
+    "raw_url": "https://github.com/objectionary/eo/raw/930a59f1587884c00d473e3daf749c7ad729dacb/eo-parser%2Fsrc%2Ftest%2Fresources%2Forg%2Feolang%2Fparser%2Fpacks%2Fadd-locators.yaml",
+    "contents_url": "https://api.github.com/repos/objectionary/eo/contents/eo-parser%2Fsrc%2Ftest%2Fresources%2Forg%2Feolang%2Fparser%2Fpacks%2Fadd-locators.yaml?ref=930a59f1587884c00d473e3daf749c7ad729dacb",
+    "patch": "@@ -12,11 +12,10 @@ tests:\n   - //o[not(@base) and @name='e' and @loc='Φ.org.abc.tt.α2.e']\n   - //o[@base='.hello' and @loc='Φ.org.abc.tt.α2.φ']\n   - //o[@base='e' and @loc='Φ.org.abc.tt.α2.φ.ρ']\n-  - //o[@name='q' and @base='.<' and @loc='Φ.org.abc.q']\n-  - //o[@base='.p' and not(@name) and @loc='Φ.org.abc.q.ρ']\n-  - //o[@base='.^' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ']\n-  - //o[@base='.&' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ.ρ']\n-  - //o[@base='$' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ.ρ.ρ']\n+  - //o[@name='q' and @base='.p' and @loc='Φ.org.abc.q']\n+  - //o[@base='.^' and not(@name) and @loc='Φ.org.abc.q.ρ']\n+  - //o[@base='.&' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ']\n+  - //o[@base='$' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ.ρ']\n eo: |\n   +alias org.abc.foo.b\n   +alias x\n@@ -38,4 +37,4 @@ eo: |\n     [e]\n       e.hello > @\n   \n-  $.&.^.p.< > q\n+  $.&.^.p > q"
+  },
+  {
+    "sha": "07396319dfa14852204f1541d981f023706cf489",
+    "filename": "eo-parser/src/test/resources/org/eolang/parser/packs/full-syntax.yaml",
+    "status": "modified",
+    "additions": 6,
+    "deletions": 7,
+    "changes": 13,
+    "blob_url": "https://github.com/objectionary/eo/blob/930a59f1587884c00d473e3daf749c7ad729dacb/eo-parser%2Fsrc%2Ftest%2Fresources%2Forg%2Feolang%2Fparser%2Fpacks%2Ffull-syntax.yaml",
+    "raw_url": "https://github.com/objectionary/eo/raw/930a59f1587884c00d473e3daf749c7ad729dacb/eo-parser%2Fsrc%2Ftest%2Fresources%2Forg%2Feolang%2Fparser%2Fpacks%2Ffull-syntax.yaml",
+    "contents_url": "https://api.github.com/repos/objectionary/eo/contents/eo-parser%2Fsrc%2Ftest%2Fresources%2Forg%2Feolang%2Fparser%2Fpacks%2Ffull-syntax.yaml?ref=930a59f1587884c00d473e3daf749c7ad729dacb",
+    "patch": "@@ -10,7 +10,6 @@ tests:\n   - //o[@as='1']\n   - //o[@as='0']\n   - //o[@base='&']\n-  - //o[@base='.<']\n   - //o[@base='.five']\n   - //objects[not(.//o[@name=''])]\n   - //o[@atom and @name='atom' and count(o)=2 and o[@name='a']]\n@@ -37,20 +36,20 @@ eo: |\n   [x] > first\n     x > @\n     second > hello\n-      $.plus.@ 5.< > i\n+      $.plus.@ 5 > i\n       third > x!\n         $\n-        <.\n+        z.\n           z\n         f\n           12:foo\n-          ((t' r 8.54 \"yes\".< \"\\t\").print 88 0x1f):hey\n-          TRUE.<:vtx\n+          ((t' r 8.54 \"yes\" \"\\t\").print 88 0x1f):hey\n+          TRUE:vtx\n           false:fle > a!\n             []\n               Q.x.f.d Q Q\n               QQ.y QQ\n-              &.@.< > t\n+              &.@ > t\n               ^.@.hey > you\n               Q\n               QQ\n@@ -91,7 +90,7 @@ eo: |\n   # This is the default 64+ symbols comment in front of abstract object.\n   [] > named\n     one.two.three.four.five\n-      t.<\n+      t.o\n     .two \"hello!\"\n     .three > a1\n     .four (a b c') > a2"
+  },
+  {
+    "sha": "7056725d79180e6095b50ca1143b19cc94c4d87d",
+    "filename": "eo-runtime/src/test/java/org/eolang/PhDefaultTest.java",
+    "status": "modified",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "blob_url": "https://github.com/objectionary/eo/blob/930a59f1587884c00d473e3daf749c7ad729dacb/eo-runtime%2Fsrc%2Ftest%2Fjava%2Forg%2Feolang%2FPhDefaultTest.java",
+    "raw_url": "https://github.com/objectionary/eo/raw/930a59f1587884c00d473e3daf749c7ad729dacb/eo-runtime%2Fsrc%2Ftest%2Fjava%2Forg%2Feolang%2FPhDefaultTest.java",
+    "contents_url": "https://api.github.com/repos/objectionary/eo/contents/eo-runtime%2Fsrc%2Ftest%2Fjava%2Forg%2Feolang%2FPhDefaultTest.java?ref=930a59f1587884c00d473e3daf749c7ad729dacb",
+    "patch": "@@ -274,8 +274,8 @@ void hasContextedChildWithSetRhoWhenFormed() {\n     void makesObjectIdentity() {\n         final Phi phi = new PhDefaultTest.Int();\n         MatcherAssert.assertThat(\n-            new Dataized(phi.take(Attr.VERTEX)).take(Long.class),\n-            Matchers.greaterThan(0L)\n+            phi.hashCode(),\n+            Matchers.greaterThan(0)\n         );\n     }\n "
+  }
+]
