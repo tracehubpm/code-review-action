@@ -36,6 +36,7 @@ import org.cactoos.Scalar;
  * @since 0.0.0
  */
 @RequiredArgsConstructor
+@SuppressWarnings("OOP.LongClassNameCheck")
 public final class SkipIfTooSmall implements Proc<Pull> {
 
     /**

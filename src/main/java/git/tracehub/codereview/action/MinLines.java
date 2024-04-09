@@ -41,10 +41,10 @@ public final class MinLines implements Scalar<Integer> {
     public Integer value() throws Exception {
         final int min;
         final String input = System.getenv().get("INPUT_MIN_LINES");
-        if (input != null) {
-            min = Integer.parseInt(input);
-        } else {
+        if (input == null) {
             min = MinLines.NOT_PROVIDED;
+        } else {
+            min = Integer.parseInt(input);
         }
         return min;
     }
