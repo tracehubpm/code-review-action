@@ -52,7 +52,9 @@ public final class SkipIfTooSmall implements Proc<Pull> {
     @Override
     public void exec(final Pull pull) throws Exception {
         final Integer min = this.lines.value();
-        if (min != 0) {
+        if (min == 0) {
+            this.routine.exec(pull);
+        } else {
             final int changes = new ChangesCount(pull).value();
             if (min > changes) {
                 Logger.info(
@@ -73,6 +75,5 @@ public final class SkipIfTooSmall implements Proc<Pull> {
                 this.routine.exec(pull);
             }
         }
-        this.routine.exec(pull);
     }
 }
