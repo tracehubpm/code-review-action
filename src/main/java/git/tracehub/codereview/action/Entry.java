@@ -27,17 +27,11 @@ import com.jcabi.github.Coordinates;
 import com.jcabi.github.Pull;
 import com.jcabi.github.RtGithub;
 import com.jcabi.log.Logger;
-import git.tracehub.codereview.action.github.ChangesCount;
 import git.tracehub.codereview.action.github.EventPull;
-import git.tracehub.codereview.action.github.FixedReviews;
-import git.tracehub.codereview.action.github.GhRequest;
-import git.tracehub.codereview.action.github.JsonReviews;
-import git.tracehub.codereview.action.github.WithComments;
 import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import javax.json.Json;
-import javax.json.JsonArray;
 import javax.json.JsonObject;
 
 /**
@@ -58,6 +52,11 @@ public final class Entry {
      *  After information is collected (pull request itself, its files,
      *  and reviews) we can feed it into the model asking what is the quality
      *  of the following code review.
+     * @todo #51:45min Box SkipIfTooSmall.java into more major routine.
+     *  SkipIfTooSmall.java is a good routine, but it should be encapsulated
+     *  by something that logically is bigger than that. For now it can
+     *  be not clear why at the end we run SkipIfTooSmall.java, not
+     *  something like Analyze.java or similar.
      */
     public static void main(final String... args) throws Exception {
         final String name = System.getenv().get("GITHUB_REPOSITORY");
@@ -89,26 +88,9 @@ public final class Entry {
             pull.number(),
             title
         );
-        final int min = Integer.parseInt(
-            System.getenv().get("INPUT_MIN_LINES")
-        );
-        if (min != 0) {
-            final int changes = new ChangesCount(pull).value();
-            if (min > changes) {
-                Logger.info(
-                    Entry.class,
-                    "Skipping pull request #%s since changes count %d less than %s",
-                    pull.number(),
-                    changes,
-                    min
-                );
-            }
-        }
-        final JsonArray reviews = new WithComments(
-            new FixedReviews(new JsonReviews(pull, new GhRequest(token))),
-            new GhRequest(token),
-            pull
-        ).value();
-        Logger.info(Entry.class, "found reviews: %s", reviews);
+        new SkipIfTooSmall(
+            new MinLines(),
+            new AnalysisRoutine(token)
+        ).exec(pull);
     }
 }
