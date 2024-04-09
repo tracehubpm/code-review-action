@@ -25,6 +25,7 @@ inputs:
   min_lines:
     description: 'Minimal amount of lines in the pull request to get analyzed by this action'
     required: false
+    default: '0'
 runs:
   using: 'docker'
   image: 'Dockerfile'
