@@ -28,7 +28,10 @@ import com.jcabi.log.Logger;
 import git.tracehub.codereview.action.github.FixedReviews;
 import git.tracehub.codereview.action.github.GhRequest;
 import git.tracehub.codereview.action.github.JsonReviews;
+import git.tracehub.codereview.action.github.PullChanges;
 import git.tracehub.codereview.action.github.WithComments;
+import git.tracehub.codereview.action.prompt.AnalysisPrompt;
+import git.tracehub.codereview.action.prompt.SystemPrompt;
 import javax.json.JsonArray;
 import lombok.RequiredArgsConstructor;
 import org.cactoos.Proc;
@@ -54,6 +57,14 @@ public final class AnalysisRoutine implements Proc<Pull> {
             new GhRequest(this.token),
             pull
         ).value();
-        Logger.info(Entry.class, "found reviews: %s", reviews);
+        Logger.info(this, "found reviews: %s", reviews);
+        final String prompt = new AnalysisPrompt(
+            new PullChanges(pull),
+            new Pull.Smart(pull).title(),
+            reviews
+        ).asString();
+        Logger.info(this, "compiled user prompt: %s", prompt);
+        final String system = new SystemPrompt().asString();
+        Logger.info(this, "compiled system prompt: %s", system);
     }
 }

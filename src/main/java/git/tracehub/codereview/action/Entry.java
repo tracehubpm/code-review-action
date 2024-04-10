@@ -48,10 +48,6 @@ public final class Entry {
      *
      * @param args Application arguments
      * @throws Exception if something went wrong.
-     * @todo #2:30min Develop a prompt to the language model.
-     *  After information is collected (pull request itself, its files,
-     *  and reviews) we can feed it into the model asking what is the quality
-     *  of the following code review.
      * @todo #51:45min Box SkipIfTooSmall.java into more major routine.
      *  SkipIfTooSmall.java is a good routine, but it should be encapsulated
      *  by something that logically is bigger than that. For now it can
