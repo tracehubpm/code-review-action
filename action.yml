@@ -24,8 +24,7 @@ inputs:
     default: 'Phind/Phind-CodeLlama-34B-v2'
   min_lines:
     description: 'Minimal amount of lines in the pull request to get analyzed by this action'
-    required: true
-    default: '0'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -35,3 +34,4 @@ runs:
     - ${{ inputs.openai_model }}
     - ${{ inputs.deepinfra_token }}
     - ${{ inputs.deepinfra_model }}
+    - ${{ inputs.min_lines }}
