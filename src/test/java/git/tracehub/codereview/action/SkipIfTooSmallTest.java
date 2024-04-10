@@ -25,21 +25,16 @@ package git.tracehub.codereview.action;
 
 import com.jcabi.github.Pull;
 import com.jcabi.github.mock.MkGithub;
-import java.io.InputStreamReader;
+import git.tracehub.codereview.action.extentions.PullFiles;
+import git.tracehub.codereview.action.extentions.PullFilesExtension;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import javax.json.Json;
-import javax.json.JsonObject;
 import nl.altindag.log.LogCaptor;
-import org.cactoos.io.ResourceOf;
 import org.cactoos.list.ListOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 /**
  * Test case for {@link SkipIfTooSmall}.
@@ -70,17 +65,9 @@ final class SkipIfTooSmallTest {
     }
 
     @Test
-    @ExtendWith(MockitoExtension.class)
-    void skipsSmallPullRequests(@Mock final Pull mock) throws Exception {
-        final List<JsonObject> files = new ListOf<>();
-        Json.createReader(
-            new InputStreamReader(
-                new ResourceOf(
-                    "git/tracehub/codereview/action/github/small.json"
-                ).stream()
-            )
-        ).readArray().forEach(value -> files.add(value.asJsonObject()));
-        Mockito.when(mock.files()).thenReturn(files);
+    @PullFiles("git/tracehub/codereview/action/github/small.json")
+    @ExtendWith(PullFilesExtension.class)
+    void skipsSmallPullRequests(final Pull mock) throws Exception {
         final LogCaptor capt = LogCaptor.forClass(SkipIfTooSmall.class);
         new SkipIfTooSmall(
             () -> 15,
@@ -103,17 +90,9 @@ final class SkipIfTooSmallTest {
     }
 
     @Test
-    @ExtendWith(MockitoExtension.class)
-    void doesNotSkipEnoughPullRequest(@Mock final Pull mock) throws Exception {
-        final List<JsonObject> files = new ListOf<>();
-        Json.createReader(
-            new InputStreamReader(
-                new ResourceOf(
-                    "git/tracehub/codereview/action/github/files.json"
-                ).stream()
-            )
-        ).readArray().forEach(value -> files.add(value.asJsonObject()));
-        Mockito.when(mock.files()).thenReturn(files);
+    @PullFiles("git/tracehub/codereview/action/github/files.json")
+    @ExtendWith(PullFilesExtension.class)
+    void doesNotSkipEnoughPullRequest(final Pull mock) throws Exception {
         final LogCaptor capt = LogCaptor.forClass(SkipIfTooSmall.class);
         new SkipIfTooSmall(
             () -> 15,

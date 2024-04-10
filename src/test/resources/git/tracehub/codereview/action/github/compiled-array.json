@@ -1,0 +1,30 @@
+[
+  {
+    "filename": "eo-maven-plugin/src/main/resources/org/eolang/maven/pre/to-java.xsl",
+    "additions": 0,
+    "deletions": 3,
+    "changes": 3,
+    "patch": "@@ -419,9 +419,6 @@ SOFTWARE.\n       <xsl:when test=\"$method='&amp;'\">\n         <xsl:text>σ</xsl:text>\n       </xsl:when>\n-      <xsl:when test=\"$method='&lt;'\">\n-        <xsl:text>ν</xsl:text>\n-      </xsl:when>\n       <xsl:otherwise>\n         <xsl:value-of select=\"eo:attr-name($method)\"/>\n       </xsl:otherwise>"
+  },
+  {
+    "filename": "eo-parser/src/test/resources/org/eolang/parser/packs/add-locators.yaml",
+    "additions": 5,
+    "deletions": 6,
+    "changes": 11,
+    "patch": "@@ -12,11 +12,10 @@ tests:\n   - //o[not(@base) and @name='e' and @loc='Φ.org.abc.tt.α2.e']\n   - //o[@base='.hello' and @loc='Φ.org.abc.tt.α2.φ']\n   - //o[@base='e' and @loc='Φ.org.abc.tt.α2.φ.ρ']\n-  - //o[@name='q' and @base='.<' and @loc='Φ.org.abc.q']\n-  - //o[@base='.p' and not(@name) and @loc='Φ.org.abc.q.ρ']\n-  - //o[@base='.^' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ']\n-  - //o[@base='.&' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ.ρ']\n-  - //o[@base='$' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ.ρ.ρ']\n+  - //o[@name='q' and @base='.p' and @loc='Φ.org.abc.q']\n+  - //o[@base='.^' and not(@name) and @loc='Φ.org.abc.q.ρ']\n+  - //o[@base='.&' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ']\n+  - //o[@base='$' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ.ρ']\n eo: |\n   +alias org.abc.foo.b\n   +alias x\n@@ -38,4 +37,4 @@ eo: |\n     [e]\n       e.hello > @\n   \n-  $.&.^.p.< > q\n+  $.&.^.p > q"
+  },
+  {
+    "filename": "eo-parser/src/test/resources/org/eolang/parser/packs/full-syntax.yaml",
+    "additions": 6,
+    "deletions": 7,
+    "changes": 13,
+    "patch": "@@ -10,7 +10,6 @@ tests:\n   - //o[@as='1']\n   - //o[@as='0']\n   - //o[@base='&']\n-  - //o[@base='.<']\n   - //o[@base='.five']\n   - //objects[not(.//o[@name=''])]\n   - //o[@atom and @name='atom' and count(o)=2 and o[@name='a']]\n@@ -37,20 +36,20 @@ eo: |\n   [x] > first\n     x > @\n     second > hello\n-      $.plus.@ 5.< > i\n+      $.plus.@ 5 > i\n       third > x!\n         $\n-        <.\n+        z.\n           z\n         f\n           12:foo\n-          ((t' r 8.54 \"yes\".< \"\\t\").print 88 0x1f):hey\n-          TRUE.<:vtx\n+          ((t' r 8.54 \"yes\" \"\\t\").print 88 0x1f):hey\n+          TRUE:vtx\n           false:fle > a!\n             []\n               Q.x.f.d Q Q\n               QQ.y QQ\n-              &.@.< > t\n+              &.@ > t\n               ^.@.hey > you\n               Q\n               QQ\n@@ -91,7 +90,7 @@ eo: |\n   # This is the default 64+ symbols comment in front of abstract object.\n   [] > named\n     one.two.three.four.five\n-      t.<\n+      t.o\n     .two \"hello!\"\n     .three > a1\n     .four (a b c') > a2"
+  },
+  {
+    "filename": "eo-runtime/src/test/java/org/eolang/PhDefaultTest.java",
+    "additions": 2,
+    "deletions": 2,
+    "changes": 4,
+    "patch": "@@ -274,8 +274,8 @@ void hasContextedChildWithSetRhoWhenFormed() {\n     void makesObjectIdentity() {\n         final Phi phi = new PhDefaultTest.Int();\n         MatcherAssert.assertThat(\n-            new Dataized(phi.take(Attr.VERTEX)).take(Long.class),\n-            Matchers.greaterThan(0L)\n+            phi.hashCode(),\n+            Matchers.greaterThan(0)\n         );\n     }\n "
+  }
+]

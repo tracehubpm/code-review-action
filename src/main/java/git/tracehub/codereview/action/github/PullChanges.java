@@ -24,34 +24,39 @@
 package git.tracehub.codereview.action.github;
 
 import com.jcabi.github.Pull;
-import git.tracehub.codereview.action.extentions.PullFiles;
-import git.tracehub.codereview.action.extentions.PullFilesExtension;
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.core.IsEqual;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonArrayBuilder;
+import lombok.RequiredArgsConstructor;
+import org.cactoos.Scalar;
 
 /**
- * Test case for {@link ChangesCount}.
+ * Pull request changes.
  *
  * @since 0.0.0
  */
-final class ChangesCountTest {
+@RequiredArgsConstructor
+public final class PullChanges implements Scalar<JsonArray> {
 
-    @Test
-    @PullFiles("git/tracehub/codereview/action/github/files.json")
-    @ExtendWith(PullFilesExtension.class)
-    void calculatesChanges(final Pull mock) throws Exception {
-        final int changes = new ChangesCount(mock).value();
-        final int expected = 31;
-        MatcherAssert.assertThat(
-            String.format(
-                "Changes count (%s) does not match with expected %s",
-                changes,
-                expected
-            ),
-            changes,
-            new IsEqual<>(expected)
+    /**
+     * Pull request.
+     */
+    private final Pull pull;
+
+    @Override
+    public JsonArray value() throws Exception {
+        final JsonArrayBuilder builder = Json.createArrayBuilder();
+        this.pull.files().forEach(
+            file -> builder.add(
+                Json.createObjectBuilder()
+                    .add("filename", file.getString("filename"))
+                    .add("additions", file.getInt("additions"))
+                    .add("deletions", file.getInt("deletions"))
+                    .add("changes", file.getInt("changes"))
+                    .add("patch", file.getString("patch"))
+                    .build()
+            )
         );
+        return builder.build();
     }
 }

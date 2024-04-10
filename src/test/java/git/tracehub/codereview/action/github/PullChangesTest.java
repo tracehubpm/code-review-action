@@ -24,29 +24,48 @@
 package git.tracehub.codereview.action.github;
 
 import com.jcabi.github.Pull;
-import git.tracehub.codereview.action.extentions.PullFiles;
-import git.tracehub.codereview.action.extentions.PullFilesExtension;
+import java.io.InputStreamReader;
+import java.util.List;
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+import org.cactoos.io.ResourceOf;
+import org.cactoos.list.ListOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.mockito.Mockito;
 
 /**
- * Test case for {@link ChangesCount}.
+ * Test case for {@link PullChanges}.
  *
  * @since 0.0.0
  */
-final class ChangesCountTest {
+final class PullChangesTest {
 
-    @Test
-    @PullFiles("git/tracehub/codereview/action/github/files.json")
-    @ExtendWith(PullFilesExtension.class)
-    void calculatesChanges(final Pull mock) throws Exception {
-        final int changes = new ChangesCount(mock).value();
-        final int expected = 31;
+    @ParameterizedTest
+    @CsvSource({
+        "git/tracehub/codereview/action/github/small.json, git/tracehub/codereview/action/github/compiled.json",
+        "git/tracehub/codereview/action/github/files.json, git/tracehub/codereview/action/github/compiled-array.json"
+    })
+    void compilesSmallChanges(final String source, final String target)
+        throws Exception {
+        final Pull mock = Mockito.mock(Pull.class);
+        final List<JsonObject> files = new ListOf<>();
+        Json.createReader(
+            new InputStreamReader(
+                new ResourceOf(source).stream()
+            )
+        ).readArray().forEach(value -> files.add(value.asJsonObject()));
+        Mockito.when(mock.files()).thenReturn(files);
+        final JsonArray changes = new PullChanges(mock).value();
+        final JsonArray expected = Json.createReader(
+            new ResourceOf(target).stream()
+        ).readArray();
         MatcherAssert.assertThat(
             String.format(
-                "Changes count (%s) does not match with expected %s",
+                "Compiled changes %s do not match with expected %s",
                 changes,
                 expected
             ),

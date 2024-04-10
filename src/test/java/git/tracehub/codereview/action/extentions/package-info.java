@@ -21,37 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package git.tracehub.codereview.action.github;
-
-import com.jcabi.github.Pull;
-import git.tracehub.codereview.action.extentions.PullFiles;
-import git.tracehub.codereview.action.extentions.PullFilesExtension;
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.core.IsEqual;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
- * Test case for {@link ChangesCount}.
+ * Test extensions.
  *
  * @since 0.0.0
  */
-final class ChangesCountTest {
-
-    @Test
-    @PullFiles("git/tracehub/codereview/action/github/files.json")
-    @ExtendWith(PullFilesExtension.class)
-    void calculatesChanges(final Pull mock) throws Exception {
-        final int changes = new ChangesCount(mock).value();
-        final int expected = 31;
-        MatcherAssert.assertThat(
-            String.format(
-                "Changes count (%s) does not match with expected %s",
-                changes,
-                expected
-            ),
-            changes,
-            new IsEqual<>(expected)
-        );
-    }
-}
+package git.tracehub.codereview.action.extentions;

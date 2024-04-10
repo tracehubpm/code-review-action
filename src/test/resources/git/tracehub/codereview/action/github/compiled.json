@@ -1,0 +1,9 @@
+[
+  {
+    "filename": "eo-maven-plugin/src/main/resources/org/eolang/maven/pre/to-java.xsl",
+    "additions": 0,
+    "deletions": 3,
+    "changes": 3,
+    "patch": "@@ -419,9 +419,6 @@ SOFTWARE.\n       <xsl:when test=\"$method='&amp;'\">\n         <xsl:text>σ</xsl:text>\n       </xsl:when>\n-      <xsl:when test=\"$method='&lt;'\">\n-        <xsl:text>ν</xsl:text>\n-      </xsl:when>\n       <xsl:otherwise>\n         <xsl:value-of select=\"eo:attr-name($method)\"/>\n       </xsl:otherwise>"
+  }
+]
