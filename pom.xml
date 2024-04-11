@@ -85,7 +85,7 @@ SOFTWARE.
     <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
     <oop-cop.version>0.2.8</oop-cop.version>
     <junit-api.version>5.10.2</junit-api.version>
-    <lombok.version>1.18.30</lombok.version>
+    <lombok.version>1.18.32</lombok.version>
     <slf4j.version>2.0.9</slf4j.version>
     <junit-params.version>5.10.2</junit-params.version>
     <hamcrest-core.version>2.2</hamcrest-core.version>
