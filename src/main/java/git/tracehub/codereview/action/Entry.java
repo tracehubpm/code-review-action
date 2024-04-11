@@ -86,7 +86,7 @@ public final class Entry {
         );
         new SkipIfTooSmall(
             new MinLines(),
-            new AnalysisRoutine(token)
+            new AnalysisRoutine(token, approver)
         ).exec(pull);
     }
 }
