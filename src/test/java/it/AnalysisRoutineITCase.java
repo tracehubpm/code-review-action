@@ -21,33 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package git.tracehub.codereview.action.deep;
+package it;
 
 /**
- * LLM settings.
+ * Integration test case for {@link git.tracehub.codereview.action.AnalysisRoutine}.
  *
  * @since 0.0.0
  */
-public interface ModelSettings {
+final class AnalysisRoutineITCase {
 
-    /**
-     * Model name.
-     *
-     * @return Model name as string
-     */
-    String model();
-
-    /**
-     * Model temperature.
-     *
-     * @return Model temperature as double
-     */
-    double temperature();
-
-    /**
-     * Model max_new_tokens.
-     *
-     * @return Model max_new_tokens as number
-     */
-    int maxNewTokens();
 }

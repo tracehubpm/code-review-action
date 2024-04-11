@@ -21,33 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package git.tracehub.codereview.action.deep;
 
 /**
- * LLM settings.
+ * Deep infra.
  *
  * @since 0.0.0
  */
-public interface ModelSettings {
-
-    /**
-     * Model name.
-     *
-     * @return Model name as string
-     */
-    String model();
-
-    /**
-     * Model temperature.
-     *
-     * @return Model temperature as double
-     */
-    double temperature();
-
-    /**
-     * Model max_new_tokens.
-     *
-     * @return Model max_new_tokens as number
-     */
-    int maxNewTokens();
-}
+package git.tracehub.codereview.action.deep;

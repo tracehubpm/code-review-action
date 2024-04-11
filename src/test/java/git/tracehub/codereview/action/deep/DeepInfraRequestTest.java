@@ -72,6 +72,7 @@ final class DeepInfraRequestTest {
     }
 
     @Test
+    // @checkstyle StringLiteralsConcatenationCheck (20 lines)
     void checksFullHttpRequest() throws Exception {
         final Request request = new DeepInfraRequest(
             "test",

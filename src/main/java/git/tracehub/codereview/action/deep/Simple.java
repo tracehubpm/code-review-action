@@ -36,11 +36,13 @@ public final class Simple implements ModelSettings {
     /**
      * Model.
      */
+    @SuppressWarnings("PMD.AvoidFieldNameMatchingMethodName")
     private final String model;
 
     /**
      * Temperature.
      */
+    @SuppressWarnings("PMD.AvoidFieldNameMatchingMethodName")
     private final double temperature;
 
     /**

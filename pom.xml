@@ -460,6 +460,8 @@ SOFTWARE.
                   <groups>simulation</groups>
                   <systemPropertyVariables>
                     <INPUT_GITHUB_TOKEN>${INPUT_GITHUB_TOKEN}</INPUT_GITHUB_TOKEN>
+                    <INPUT_DEEPINFRA_TOKEN>${INPUT_DEEPINFRA_TOKEN}</INPUT_DEEPINFRA_TOKEN>
+                    <INPUT_DEEPINFRA_MODEL>${INPUT_DEEPINFRA_MODEL}</INPUT_DEEPINFRA_MODEL>
                   </systemPropertyVariables>
                 </configuration>
               </execution>

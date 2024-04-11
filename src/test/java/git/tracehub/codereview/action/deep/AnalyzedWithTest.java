@@ -31,6 +31,7 @@ import org.junit.jupiter.api.Test;
  * Test case for {@link AnalyzedWith}.
  *
  * @since 0.0.0
+ * @checkstyle StringLiteralsConcatenationCheck (20 lines)
  */
 final class AnalyzedWithTest {
 
