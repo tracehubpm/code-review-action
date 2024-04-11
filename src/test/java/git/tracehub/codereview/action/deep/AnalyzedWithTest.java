@@ -42,7 +42,7 @@ final class AnalyzedWithTest {
         ).asString();
         final String expected =
             "This is a fake completion performed by"
-            + " FakeModel.java\n\nAnalyzed with fake-gpt-4";
+            + " FakeModel.java\n\nAnalyzed with `fake-gpt-4`";
         MatcherAssert.assertThat(
             String.format(
                 "Tagged response (%s) does not match with expected (%s)",

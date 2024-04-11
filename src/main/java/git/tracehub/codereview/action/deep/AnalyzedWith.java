@@ -51,7 +51,7 @@ public final class AnalyzedWith implements Text {
             this.model.completion(),
             "",
             String.format(
-                "Analyzed with %s",
+                "Analyzed with `%s`",
                 this.tag
             )
         );
