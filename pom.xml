@@ -89,8 +89,8 @@ SOFTWARE.
     <slf4j.version>2.0.9</slf4j.version>
     <junit-params.version>5.10.2</junit-params.version>
     <hamcrest-core.version>2.2</hamcrest-core.version>
-    <mockito-core.version>5.5.0</mockito-core.version>
-    <mockito-junit-jupiter.version>5.5.0</mockito-junit-jupiter.version>
+    <mockito-core.version>5.11.0</mockito-core.version>
+    <mockito-junit-jupiter.version>5.11.0</mockito-junit-jupiter.version>
     <jping.version>0.0.1</jping.version>
     <eokson.version>0.3.2</eokson.version>
     <logcaptor.version>2.9.2</logcaptor.version>
