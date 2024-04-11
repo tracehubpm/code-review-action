@@ -98,15 +98,19 @@ before sending us your pull request please run full maven build:
 $ mvn clean install -Pjacoco
 ```
 
-If you want to run simulation tests (annotated with `@Tag("simulation")`):
+If you want to run simulation integration tests (annotated with `@Tag("simulation")`):
 
 ```shell
-$ mvn clean install -Psimulation -DINPUT_GITHUB_TOKEN=...
+$ mvn clean install -Psimulation -DINPUT_GITHUB_TOKEN=... -DINPUT_DEEPINFRA_TOKEN=... -DINPUT_DEEPINFRA_MODEL=...
 ```
 
-Provide your GitHub [token](https://github.com/settings/tokens) with write permissions
+For `INPUT_GITHUB_TOKEN` provide your GitHub [token](https://github.com/settings/tokens) with write permissions
 to the next repositories:
 
 * [h1alexbel/test](https://github.com/h1alexbel/test)
+
+For `INPUT_DEEPINFRA_TOKEN` provide your token from Deep Infra,
+you can obtain it [here](https://deepinfra.com/dash/api_keys).
+For `INPUT_DEEPINFRA_MODEL` pick one of the [available models](https://deepinfra.com/models/text-generation).
 
 You will need Maven 3.8+ and Java 17+.
