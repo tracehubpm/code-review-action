@@ -31,7 +31,7 @@ SOFTWARE.
   </parent>
   <groupId>git.tracehub</groupId>
   <artifactId>code-review</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1.20</version>
   <name>code-review-action</name>
   <description>Quality of Code Review Checker, plugin it as GitHub Action</description>
   <inceptionYear>2023</inceptionYear>
