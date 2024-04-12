@@ -23,48 +23,47 @@
  */
 package git.tracehub.codereview.action.prompt;
 
+import java.util.Collection;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
 import lombok.RequiredArgsConstructor;
 import org.cactoos.Text;
+import org.cactoos.list.ListOf;
 
 /**
- * Analysis prompt.
+ * Reviews into text.
  *
  * @since 0.0.0
  */
 @RequiredArgsConstructor
-public final class AnalysisPrompt implements Text {
+public final class TextReviews implements Text {
 
     /**
-     * Pull request.
+     * Reviews.
      */
-    private final Text changes;
-
-    /**
-     * Pull request title.
-     */
-    private final String title;
-
-    /**
-     * Pull request reviews.
-     */
-    private final Text reviews;
+    private final JsonArray reviews;
 
     @Override
     public String asString() throws Exception {
-        return String.join(
-            "\n",
-            "Please analyze how thorough the code review was.",
-            "In the end of analysis suggest a review score, like \"excellent",
-            " review\", \"poor review\" or something in the middle",
-            "Pull Request: ",
-            String.format(
-                "PR title: %s",
-                this.title
-            ),
-            "PR changes:",
-            this.changes.asString(),
-            "Code review:",
-            this.reviews.asString()
+        final Collection<String> accum = new ListOf<>();
+        this.reviews.forEach(
+            value -> {
+                final JsonObject json = value.asJsonObject();
+                final String head = json.getString("submitted");
+                final Collection<String> comments = new ListOf<>();
+                json.getJsonArray("comments")
+                    .forEach(comment -> comments.add(comment.toString()));
+                accum.add(
+                    String.format(
+                        "Feedback: %s; Comments: %s",
+                        head,
+                        comments
+                    )
+                );
+            }
         );
+        final StringBuilder builder = new StringBuilder(0);
+        accum.forEach(r -> builder.append(r).append('\n'));
+        return builder.toString();
     }
 }

@@ -26,7 +26,6 @@ package git.tracehub.codereview.action.prompt;
 import com.jcabi.github.Pull;
 import git.tracehub.codereview.action.extentions.PullFiles;
 import git.tracehub.codereview.action.extentions.PullFilesExtension;
-import git.tracehub.codereview.action.github.Authored;
 import git.tracehub.codereview.action.github.PullChanges;
 import java.io.InputStreamReader;
 import javax.json.Json;
@@ -48,17 +47,17 @@ final class AnalysisPromptTest {
     @ExtendWith(PullFilesExtension.class)
     void compilesPrompt(final Pull mock) throws Exception {
         final String prompt = new AnalysisPrompt(
-            new PullChanges(mock),
+            new TextChanges(new PullChanges(mock)),
             "feat(#1): xsl changes",
-            new Authored(
-                () -> Json.createReader(
+            new TextReviews(
+                Json.createReader(
                     new InputStreamReader(
                         new ResourceOf(
-                            "git/tracehub/codereview/action/github/comments.json"
+                            "git/tracehub/codereview/action/prompt/reviews.json"
                         ).stream()
                     )
                 ).readArray()
-            ).value()
+            )
         ).asString();
         final String expected = String.join(
             "\n",
@@ -74,8 +73,11 @@ final class AnalysisPromptTest {
             "additions: 0",
             "deletions: 3",
             "changes: 3]",
-            "Code review: ",
-            "[\"h1alexbel: @hizmailovich first comment\",\"h1alexbel: @hizmailovich second comment\",\"h1alexbel: @hizmailovich This sentence might be connected with the previous one: \\\"The subject of this article is caching.\\\"\"]"
+            "Code review:",
+            "Feedback: comment; Comments: [\"test1\", \"test2\", \"test3\"]",
+            "Feedback: approve; Comments: [\"test4\"]",
+            "Feedback: r; Comments: [\"test5\", \"test6\"]",
+            ""
         );
         MatcherAssert.assertThat(
             String.format(
