@@ -86,6 +86,47 @@ These are the parameters you can use/override:
 by this action, pull requests with fewer lines than provided `min_size`
 won't be processed.
 
+### Analysis Method
+
+To analyze code review quality, performed by other programmer, we employ
+[LLM](https://en.wikipedia.org/wiki/Large_language_model).
+First we parse GitHub pull request to this format:
+
+```json
+[
+  {
+    "filename": "eo-parser/src/test/resources/org/eolang/parser/packs/add-locators.yaml",
+    "additions": 5,
+    "deletions": 6,
+    "changes": 11,
+    "patch": "@@ -12,11 +12,10 @@ tests:\n   - //o[not(@base) and @name='e' and @loc='Φ.org.abc.tt.α2.e']\n   - //o[@base='.hello' and @loc='Φ.org.abc.tt.α2.φ']\n   - //o[@base='e' and @loc='Φ.org.abc.tt.α2.φ.ρ']\n-  - //o[@name='q' and @base='.<' and @loc='Φ.org.abc.q']\n-  - //o[@base='.p' and not(@name) and @loc='Φ.org.abc.q.ρ']\n-  - //o[@base='.^' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ']\n-  - //o[@base='.&' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ.ρ']\n-  - //o[@base='$' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ.ρ.ρ']\n+  - //o[@name='q' and @base='.p' and @loc='Φ.org.abc.q']\n+  - //o[@base='.^' and not(@name) and @loc='Φ.org.abc.q.ρ']\n+  - //o[@base='.&' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ']\n+  - //o[@base='$' and not(@name) and @loc='Φ.org.abc.q.ρ.ρ.ρ']\n eo: |\n   +alias org.abc.foo.b\n   +alias x\n@@ -38,4 +37,4 @@ eo: |\n     [e]\n       e.hello > @\n   \n-  $.&.^.p.< > q\n+  $.&.^.p > q"
+  },
+  ...
+]
+```
+
+Then we parse the all the reviews made by the reviewer in this pull request:
+
+```json
+[
+  {
+    "submitted": "@maxonfjvipon, take a look, please",
+    "comments": [
+      "h1alexbel: Let's refactor it, since..."
+    ]
+  },
+  ...
+]
+```
+
+After all this prepared we instruct LLM to analyze how thorough the code review was.
+In the end of analysis LLM suggests a review score like "excellent review",
+"fair review", and "poor review".
+
+The next step is to generate suggestions for the reviewer, on how to improve
+the code review process in future from his side. To do so, we again ask LLM to conduct
+in this area.
+
 ### How to contribute
 
 Fork repository, make changes, send us a [pull request](https://www.yegor256.com/2014/04/15/github-guidelines.html).
