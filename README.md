@@ -81,8 +81,7 @@ These are the parameters you can use/override:
 * `github_token`: GitHub token in order to post comments in the pull request.
 * `openai_model`: Open AI ChatGPT model, the default one is `gpt-4`.
 * `deepinfra_token`: Deep Infra API key, you can obtain it [here](https://deepinfra.com/dash/api_keys).
-* `deepinfra_model`: Deep Infra API model, the default one is `Phind/Phind-CodeLlama-34B-v2`,
-  check out [all available models](https://deepinfra.com/models/text-generation).
+* `deepinfra_model`: Deep Infra API model, check out [all available models](https://deepinfra.com/models/text-generation).
 * `min_lines`: Minimal amount of lines in the pull request to get analyzed
 by this action, pull requests with fewer lines than provided `min_size`
 won't be processed.
