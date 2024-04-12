@@ -23,15 +23,8 @@
  */
 package git.tracehub.codereview.action.prompt;
 
-import java.util.List;
-import java.util.function.Consumer;
-import javax.json.JsonArray;
-import javax.json.JsonObject;
-import javax.json.JsonValue;
 import lombok.RequiredArgsConstructor;
-import org.cactoos.Scalar;
 import org.cactoos.Text;
-import org.cactoos.list.ListOf;
 
 /**
  * Analysis prompt.

@@ -75,10 +75,13 @@ final class TextReviewsTest {
                 )
             ).readArray()
         ).asString();
-        final String expected =
-            "Feedback: comment; Comments: [\"test1\", \"test2\", \"test3\"]"
-            + "\nFeedback: approve; Comments: [\"test4\"]\nFeedback: r;"
-            + " Comments: [\"test5\", \"test6\"]\n";
+        final String expected = String.join(
+            "\n",
+            "Feedback: comment; Comments: [\"test1\", \"test2\", \"test3\"]",
+            "Feedback: approve; Comments: [\"test4\"]",
+            "Feedback: r; Comments: [\"test5\", \"test6\"]",
+            ""
+        );
         MatcherAssert.assertThat(
             String.format(
                 "Output text (%s) does not match with expected (%s)",

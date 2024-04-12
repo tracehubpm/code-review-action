@@ -40,6 +40,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
  *
  * @since 0.1.22
  */
+@SuppressWarnings({"PMD.ExcessiveMethodLength", "PMD.AvoidDuplicateLiterals"})
 final class TextChangesTest {
 
     @Test
