@@ -1,0 +1,14 @@
+[
+  {
+    "submitted": "comment",
+    "comments": ["test1", "test2", "test3"]
+  },
+  {
+    "submitted": "approve",
+    "comments": ["test4"]
+  },
+  {
+    "submitted": "r",
+    "comments": ["test5", "test6"]
+  }
+]
