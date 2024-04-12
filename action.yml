@@ -21,7 +21,6 @@ inputs:
   deepinfra_model:
     description: 'Deep Infra API model'
     required: false
-    default: 'Phind/Phind-CodeLlama-34B-v2'
   min_lines:
     description: 'Minimal amount of lines in the pull request to get analyzed by this action'
     required: false
