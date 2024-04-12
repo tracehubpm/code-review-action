@@ -24,8 +24,10 @@
 package git.tracehub.codereview.action.prompt;
 
 import java.util.List;
+import java.util.function.Consumer;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
+import javax.json.JsonValue;
 import lombok.RequiredArgsConstructor;
 import org.cactoos.Scalar;
 import org.cactoos.Text;
@@ -42,7 +44,7 @@ public final class AnalysisPrompt implements Text {
     /**
      * Pull request.
      */
-    private final Scalar<JsonArray> changes;
+    private final Text changes;
 
     /**
      * Pull request title.
@@ -52,39 +54,10 @@ public final class AnalysisPrompt implements Text {
     /**
      * Pull request reviews.
      */
-    private final JsonArray reviews;
+    private final Text reviews;
 
     @Override
     public String asString() throws Exception {
-        final List<String> composed = new ListOf<>();
-        this.changes.value()
-            .forEach(
-                change -> {
-                    final JsonObject json = change.asJsonObject();
-                    composed.add(
-                        String.join(
-                            "\n",
-                            String.format(
-                                "filename: %s",
-                                json.getString("filename")
-                            ),
-                            "patch:",
-                            json.getString("patch"),
-                            String.format(
-                                "additions: %s",
-                                json.getInt("additions")
-                            ),
-                            String.format(
-                                "deletions: %s",
-                                json.getInt("deletions")
-                            ),
-                            String.format(
-                                "changes: %s",
-                                json.getInt("changes")
-                            )
-                        )
-                    );
-                });
         return String.join(
             "\n",
             "Please analyze how thorough the code review was.",
@@ -96,9 +69,9 @@ public final class AnalysisPrompt implements Text {
                 this.title
             ),
             "PR changes:",
-            composed.toString(),
-            "Code review: ",
-            this.reviews.toString()
+            this.changes.asString(),
+            "Code review:",
+            this.reviews.asString()
         );
     }
 }
