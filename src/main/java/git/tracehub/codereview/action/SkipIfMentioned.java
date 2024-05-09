@@ -21,6 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+/*
+ * @todo #85:15min apply SkipIfMentioned too skip pull request.
+ *  SkipIfMentioned should be applied on incoming pull request
+ *  to check author on exclusion.
+ */
 package git.tracehub.codereview.action;
 
 import com.jcabi.github.Pull;
@@ -53,7 +58,7 @@ public class SkipIfMentioned implements Proc<Pull> {
         if (this.mentions.contains(author)) {
             Logger.info(
                 this,
-                "Skipping pull request, author '%s' is excluded",
+                "Skipping pull request, since author '%s' is excluded",
                 author
             );
         } else {

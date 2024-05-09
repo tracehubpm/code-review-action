@@ -21,24 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-/*
- * @todo #85:15min apply SkipIfMentioned too skip pull request.
- *  SkipIfMentioned should be applied on incoming pull request
- *  to check author on exclusion.
- */
 package git.tracehub.codereview.action;
 
 import com.jcabi.github.Pull;
-import com.jcabi.github.mock.MkGithub;
 import com.jcabi.log.Logger;
-import java.io.IOException;
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicBoolean;
+import git.tracehub.codereview.action.extentions.PullRequestExtension;
 import org.cactoos.list.ListOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsNot;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.llorllale.cactoos.matchers.IsTrue;
 
 /**
@@ -48,31 +42,14 @@ import org.llorllale.cactoos.matchers.IsTrue;
  */
 final class SkipIfMentionedTest {
 
-    /**
-     * Test pr.
-     */
-    private Pull pull;
-
-    @BeforeEach
-    void setUp() throws IOException {
-        this.pull = new Pull.Smart(
-            new MkGithub().randomRepo()
-                .pulls()
-                .create(
-                    "test-title",
-                    "test-head",
-                    "test-base"
-                )
-        );
-    }
-
     @Test
-    void skipsWhenAuthorMentioned() throws Exception {
+    @ExtendWith(PullRequestExtension.class)
+    void skipsWhenAuthorMentioned(final Pull pull) throws Exception {
         final AtomicBoolean skipped = new AtomicBoolean(true);
         new SkipIfMentioned(
             new ListOf<>("jeff", "not-jeff"),
             ignored -> skipped.set(false)
-        ).exec(this.pull);
+        ).exec(pull);
         MatcherAssert.assertThat(
             "Skipped flag should be 'true', but was '%s'".formatted(skipped.get()),
             skipped.get(),
@@ -81,7 +58,8 @@ final class SkipIfMentionedTest {
     }
 
     @Test
-    void processesAuthorMentioned() throws Exception {
+    @ExtendWith(PullRequestExtension.class)
+    void processesAuthorMentioned(final Pull pull) throws Exception {
         final AtomicBoolean skipped = new AtomicBoolean(true);
         new SkipIfMentioned(
             Collections.emptyList(),
@@ -89,7 +67,7 @@ final class SkipIfMentionedTest {
                 Logger.info(this, "Processing pr...");
                 skipped.set(false);
             }
-        ).exec(this.pull);
+        ).exec(pull);
         MatcherAssert.assertThat(
             "Skipped flag should be 'false', but was '%s'".formatted(skipped.get()),
             skipped.get(),
