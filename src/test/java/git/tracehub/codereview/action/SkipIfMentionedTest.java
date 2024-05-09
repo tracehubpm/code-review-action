@@ -25,9 +25,9 @@ package git.tracehub.codereview.action;
 
 import com.jcabi.github.Pull;
 import com.jcabi.log.Logger;
+import git.tracehub.codereview.action.extentions.PullRequestExtension;
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicBoolean;
-import git.tracehub.codereview.action.extentions.PullRequestExtension;
 import org.cactoos.list.ListOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsNot;
