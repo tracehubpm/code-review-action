@@ -24,7 +24,9 @@
 /*
  * @todo #85:15min apply SkipIfMentioned too skip pull request.
  *  SkipIfMentioned should be applied on incoming pull request
- *  to check author on exclusion.
+ *  to check author on exclusion. Let's integrate this field with
+ *  action.yml inputs, so defined values will be injected into
+ *  mentions let's call this input skip_authors.
  */
 package git.tracehub.codereview.action;
 
