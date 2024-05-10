@@ -27,7 +27,7 @@ import com.jcabi.github.Pull;
 import com.jcabi.log.Logger;
 import git.tracehub.codereview.action.github.ChangesCount;
 import lombok.RequiredArgsConstructor;
-import org.cactoos.Proc;
+import org.cactoos.BiProc;
 import org.cactoos.Scalar;
 
 /**
@@ -37,7 +37,7 @@ import org.cactoos.Scalar;
  */
 @RequiredArgsConstructor
 @SuppressWarnings("OOP.LongClassNameCheck")
-public final class SkipIfTooSmall implements Proc<Pull> {
+public final class SkipIfTooSmall implements BiProc<Pull, String> {
 
     /**
      * Min lines.
@@ -47,13 +47,13 @@ public final class SkipIfTooSmall implements Proc<Pull> {
     /**
      * Routine to run.
      */
-    private final Proc<Pull> routine;
+    private final BiProc<Pull, String> routine;
 
     @Override
-    public void exec(final Pull pull) throws Exception {
+    public void exec(final Pull pull, final String model) throws Exception {
         final Integer min = this.lines.value();
         if (min == 0) {
-            this.routine.exec(pull);
+            this.routine.exec(pull, model);
         } else {
             final int changes = new ChangesCount(pull).value();
             if (min > changes) {
@@ -72,7 +72,7 @@ public final class SkipIfTooSmall implements Proc<Pull> {
                     changes,
                     min
                 );
-                this.routine.exec(pull);
+                this.routine.exec(pull, model);
             }
         }
     }
