@@ -56,7 +56,7 @@ public final class AnalysisPrompt implements Text {
             "Please analyze how thorough the code review was.",
             "In the end of analysis suggest a review score, like \"excellent",
             " review\", \"poor review\" or something in the middle.",
-            "Summarize the analysis in just one readable paragraph.",
+            "Analysis must be just one readable paragraph in long.",
             "Pull Request: ",
             String.format(
                 "PR title: %s",
