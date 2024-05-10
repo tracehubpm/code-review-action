@@ -104,13 +104,12 @@ public final class AnalysisRoutine implements BiProc<Pull, String> {
             )
         );
         final String score = analysis.completion();
-        Logger.info(this, "Suggested review score is %s", score);
         if (score.toLowerCase(Locale.ROOT).contains("excellent")) {
             new FeedbackInPull(
                 new StartWithNickname(
                     this.approver,
                     new AnalyzedWith(
-                        analysis,
+                        score,
                         model
                     )
                 ),
@@ -143,7 +142,7 @@ public final class AnalysisRoutine implements BiProc<Pull, String> {
                                         ).asString()
                                     )
                                 )
-                            ),
+                            ).completion(),
                             model
                         ),
                         score

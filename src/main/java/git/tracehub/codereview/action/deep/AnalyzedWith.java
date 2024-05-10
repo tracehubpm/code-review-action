@@ -37,7 +37,7 @@ public final class AnalyzedWith implements Text {
     /**
      * Model.
      */
-    private final Model model;
+    private final String completion;
 
     /**
      * Tag.
@@ -48,7 +48,7 @@ public final class AnalyzedWith implements Text {
     public String asString() throws Exception {
         return String.join(
             "\n",
-            this.model.completion(),
+            this.completion,
             "",
             String.format(
                 "Analyzed with `%s`",
