@@ -149,7 +149,7 @@ $ mvn clean install -Psimulation -DINPUT_GITHUB_TOKEN=... -DINPUT_DEEPINFRA_TOKE
 For `INPUT_GITHUB_TOKEN` provide your GitHub [token](https://github.com/settings/tokens) with write permissions
 to the next repositories:
 
-* [h1alexbel/test](https://github.com/h1alexbel/test)
+* [tracehubpm/test](https://github.com/tracehubpm/test)
 
 For `INPUT_DEEPINFRA_TOKEN` provide your token from Deep Infra,
 you can obtain it [here](https://deepinfra.com/dash/api_keys).
