@@ -52,9 +52,9 @@ final class JsonReviewsITCase {
     @ParameterizedTest
     @ValueSource(
         ints = {
-            311,
-            312,
-            313
+            3,
+            4,
+            5
         }
     )
     @Tag("simulation")
@@ -62,7 +62,7 @@ final class JsonReviewsITCase {
     void fetchesReviews(final int pid) throws Exception {
         final Github github = new GhIdentity().value();
         final Pull pull = github.repos()
-            .get(new Coordinates.Simple("h1alexbel/test"))
+            .get(new Coordinates.Simple("tracehubpm/test"))
             .pulls()
             .get(pid);
         final JsonArray reviews = new JsonReviews(

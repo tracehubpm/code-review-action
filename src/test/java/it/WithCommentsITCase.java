@@ -53,9 +53,9 @@ final class WithCommentsITCase {
     @ParameterizedTest
     @ValueSource(
         ints = {
-            311,
-            312,
-            313
+            3,
+            4,
+            5
         }
     )
     @Tag("simulation")
@@ -63,7 +63,7 @@ final class WithCommentsITCase {
     void appendsComments(final int pid) throws Exception {
         final String token = System.getProperty("INPUT_GITHUB_TOKEN");
         final Pull pull = new GhIdentity().value()
-            .repos().get(new Coordinates.Simple("h1alexbel/test"))
+            .repos().get(new Coordinates.Simple("tracehubpm/test"))
             .pulls().get(pid);
         final JsonArray reviews = new WithComments(
             new FixedReviews(new JsonReviews(pull, new GhRequest(token))),

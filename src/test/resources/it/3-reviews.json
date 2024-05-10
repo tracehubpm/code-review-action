@@ -1,7 +1,7 @@
 [
   {
-    "id": 1971184892,
-    "node_id": "PRR_kwDOLEBZDc51feT8",
+    "id": 2050227474,
+    "node_id": "PRR_kwDOL5yXmc56M_0S",
     "user": {
       "login": "h1alexbel",
       "id": 83453843,
@@ -22,20 +22,20 @@
       "type": "User",
       "site_admin": false
     },
-    "body": "Just one",
-    "state": "APPROVED",
-    "html_url": "https://github.com/h1alexbel/test/pull/311#pullrequestreview-1971184892",
-    "pull_request_url": "https://api.github.com/repos/h1alexbel/test/pulls/311",
-    "author_association": "OWNER",
+    "body": "OK",
+    "state": "COMMENTED",
+    "html_url": "https://github.com/tracehubpm/test/pull/3#pullrequestreview-2050227474",
+    "pull_request_url": "https://api.github.com/repos/tracehubpm/test/pulls/3",
+    "author_association": "MEMBER",
     "_links": {
       "html": {
-        "href": "https://github.com/h1alexbel/test/pull/311#pullrequestreview-1971184892"
+        "href": "https://github.com/tracehubpm/test/pull/3#pullrequestreview-2050227474"
       },
       "pull_request": {
-        "href": "https://api.github.com/repos/h1alexbel/test/pulls/311"
+        "href": "https://api.github.com/repos/tracehubpm/test/pulls/3"
       }
     },
-    "submitted_at": "2024-04-01T12:37:28Z",
-    "commit_id": "9f294a8758896c81cf4e9e3414c4ae9cf640fd4a"
+    "submitted_at": "2024-05-10T14:37:24Z",
+    "commit_id": "6ed3bd039e07e3286682224493d5ad38bc240984"
   }
 ]
