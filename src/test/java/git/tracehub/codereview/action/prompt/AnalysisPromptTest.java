@@ -61,10 +61,9 @@ final class AnalysisPromptTest {
         ).asString();
         final String expected = String.join(
             "\n",
-            "Please analyze how thorough the code review was.",
-            "In the end of analysis suggest a review score, like \"excellent",
-            " review\", \"poor review\" or something in the middle.",
-            "Analysis must be just one readable paragraph in long.",
+            "Please analyze how thorough the code review was and suggest a review score",
+            "like \"excellent review\", \"poor review\" or \"average review\" for something in the middle.",
+            "Please respond only with the review score.",
             "Pull Request: ",
             "PR title: feat(#1): xsl changes",
             "PR changes:",

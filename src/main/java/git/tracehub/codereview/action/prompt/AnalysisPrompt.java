@@ -53,10 +53,9 @@ public final class AnalysisPrompt implements Text {
     public String asString() throws Exception {
         return String.join(
             "\n",
-            "Please analyze how thorough the code review was.",
-            "In the end of analysis suggest a review score, like \"excellent",
-            " review\", \"poor review\" or something in the middle.",
-            "Analysis must be just one readable paragraph in long.",
+            "Please analyze how thorough the code review was and suggest a review score",
+            "like \"excellent review\", \"poor review\" or \"average review\" for something in the middle.",
+            "Please respond only with the review score.",
             "Pull Request: ",
             String.format(
                 "PR title: %s",
