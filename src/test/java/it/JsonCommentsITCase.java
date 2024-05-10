@@ -53,18 +53,18 @@ final class JsonCommentsITCase {
     void fetchesComments() throws Exception {
         final String token = System.getProperty("INPUT_GITHUB_TOKEN");
         final Pull pull = new GhIdentity().value()
-            .repos().get(new Coordinates.Simple("h1alexbel/test"))
+            .repos().get(new Coordinates.Simple("tracehubpm/test"))
             .pulls()
-            .get(311);
+            .get(1);
         final JsonArray comments = new JsonComments(
             new GhRequest(token),
             pull,
-            1_971_184_892
+            2_050_189_949
         ).value();
         final JsonArray expected = Json.createReader(
             new InputStreamReader(
                 new ResourceOf(
-                    "it/311-1971184892-comments.json"
+                    "it/pr-1-comments.json"
                 ).stream()
             )
         ).readArray();
