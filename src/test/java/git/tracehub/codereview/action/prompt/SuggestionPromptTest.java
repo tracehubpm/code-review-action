@@ -23,48 +23,44 @@
  */
 package git.tracehub.codereview.action.prompt;
 
-import lombok.RequiredArgsConstructor;
-import org.cactoos.Text;
+import org.cactoos.text.TextOf;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.core.IsEqual;
+import org.junit.jupiter.api.Test;
 
 /**
- * Analysis prompt.
+ * Test case for {@link SuggestionPrompt}.
  *
- * @since 0.0.0
+ * @since 0.1.24
  */
-@RequiredArgsConstructor
-public final class AnalysisPrompt implements Text {
+final class SuggestionPromptTest {
 
-    /**
-     * Pull request.
-     */
-    private final Text changes;
-
-    /**
-     * Pull request title.
-     */
-    private final String title;
-
-    /**
-     * Pull request reviews.
-     */
-    private final Text reviews;
-
-    @Override
-    public String asString() throws Exception {
-        return String.join(
+    @Test
+    void compilesSuggestionPrompt() throws Exception {
+        final String review = "testing";
+        final String pull = "testing pull";
+        final String prompt = new SuggestionPrompt(
+            new TextOf(review),
+            new TextOf(pull)
+        ).asString();
+        final String expected = String.join(
             "\n",
-            "Please analyze how thorough the code review was and suggest a review score",
-            "like \"excellent review\", \"poor review\" or \"average review\" for something in the middle.",
-            "Please respond only with the review score.",
-            "Pull Request: ",
-            String.format(
-                "PR title: %s",
-                this.title
-            ),
-            "PR changes:",
-            this.changes.asString(),
+            "Code review was not excellent, please post one suggestion for code reviewer",
+            "what he/she can improve in the future.",
+            "Start suggestion with text \"I would recommend ...\"",
             "Code review:",
-            this.reviews.asString()
+            review,
+            "Pull Request:",
+            pull
+        );
+        MatcherAssert.assertThat(
+            String.format(
+                "Compiled prompt '%s' does not match with expected '%s'",
+                prompt,
+                expected
+            ),
+            prompt,
+            new IsEqual<>(expected)
         );
     }
 }

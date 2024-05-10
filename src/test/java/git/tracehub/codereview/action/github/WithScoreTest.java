@@ -21,50 +21,41 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package git.tracehub.codereview.action.prompt;
+package git.tracehub.codereview.action.github;
 
-import lombok.RequiredArgsConstructor;
-import org.cactoos.Text;
+import org.cactoos.text.TextOf;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.core.IsEqual;
+import org.junit.jupiter.api.Test;
 
 /**
- * Analysis prompt.
+ * Test case for {@link WithScore}.
  *
- * @since 0.0.0
+ * @since 0.1.24
  */
-@RequiredArgsConstructor
-public final class AnalysisPrompt implements Text {
+final class WithScoreTest {
 
-    /**
-     * Pull request.
-     */
-    private final Text changes;
-
-    /**
-     * Pull request title.
-     */
-    private final String title;
-
-    /**
-     * Pull request reviews.
-     */
-    private final Text reviews;
-
-    @Override
-    public String asString() throws Exception {
-        return String.join(
+    @Test
+    void appendsScore() throws Exception {
+        final String score = "Review score: good";
+        final String origin = "this is origin text";
+        final String composed = new WithScore(
+            new TextOf(origin),
+            score
+        ).asString();
+        final String expected = String.join(
             "\n",
-            "Please analyze how thorough the code review was and suggest a review score",
-            "like \"excellent review\", \"poor review\" or \"average review\" for something in the middle.",
-            "Please respond only with the review score.",
-            "Pull Request: ",
+            score,
+            origin
+        );
+        MatcherAssert.assertThat(
             String.format(
-                "PR title: %s",
-                this.title
+                "Composed feedback '%s' does not match with expected '%s'",
+                composed,
+                expected
             ),
-            "PR changes:",
-            this.changes.asString(),
-            "Code review:",
-            this.reviews.asString()
+            composed,
+            new IsEqual<>(expected)
         );
     }
 }

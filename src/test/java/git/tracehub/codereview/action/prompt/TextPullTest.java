@@ -23,48 +23,47 @@
  */
 package git.tracehub.codereview.action.prompt;
 
-import lombok.RequiredArgsConstructor;
-import org.cactoos.Text;
+import com.jcabi.github.Pull;
+import com.jcabi.github.mock.MkGithub;
+import org.cactoos.text.TextOf;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.core.IsEqual;
+import org.junit.jupiter.api.Test;
 
 /**
- * Analysis prompt.
+ * Test case for {@link TextPull}.
  *
- * @since 0.0.0
+ * @since 0.1.24
  */
-@RequiredArgsConstructor
-public final class AnalysisPrompt implements Text {
+final class TextPullTest {
 
-    /**
-     * Pull request.
-     */
-    private final Text changes;
-
-    /**
-     * Pull request title.
-     */
-    private final String title;
-
-    /**
-     * Pull request reviews.
-     */
-    private final Text reviews;
-
-    @Override
-    public String asString() throws Exception {
-        return String.join(
+    @Test
+    void transformsPullIntoText() throws Exception {
+        final String title = "test";
+        final Pull pull = new MkGithub().randomRepo()
+            .pulls()
+            .create(title, "testing", "master");
+        new Pull.Smart(pull).title(title);
+        final String changes = "some changes";
+        final String txt = new TextPull(
+            pull,
+            new TextOf(changes)
+        ).asString();
+        final String expected = String.join(
             "\n",
-            "Please analyze how thorough the code review was and suggest a review score",
-            "like \"excellent review\", \"poor review\" or \"average review\" for something in the middle.",
-            "Please respond only with the review score.",
-            "Pull Request: ",
-            String.format(
-                "PR title: %s",
-                this.title
-            ),
+            String.format("PR title: %s", title),
             "PR changes:",
-            this.changes.asString(),
-            "Code review:",
-            this.reviews.asString()
+            changes
+        );
+        MatcherAssert.assertThat(
+            String.format(
+                "Composed text pull '%s' for pull '%s' does not match with expected '%s'",
+                txt,
+                pull,
+                expected
+            ),
+            txt,
+            new IsEqual<>(expected)
         );
     }
 }

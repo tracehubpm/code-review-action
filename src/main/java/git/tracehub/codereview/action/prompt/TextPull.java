@@ -23,48 +23,38 @@
  */
 package git.tracehub.codereview.action.prompt;
 
+import com.jcabi.github.Pull;
 import lombok.RequiredArgsConstructor;
 import org.cactoos.Text;
 
 /**
- * Analysis prompt.
+ * Pull request in the plain text.
  *
- * @since 0.0.0
+ * @since 0.1.24
  */
 @RequiredArgsConstructor
-public final class AnalysisPrompt implements Text {
+public final class TextPull implements Text {
 
     /**
-     * Pull request.
+     * Pull.
+     */
+    private final Pull pull;
+
+    /**
+     * Changes in the code.
      */
     private final Text changes;
-
-    /**
-     * Pull request title.
-     */
-    private final String title;
-
-    /**
-     * Pull request reviews.
-     */
-    private final Text reviews;
 
     @Override
     public String asString() throws Exception {
         return String.join(
             "\n",
-            "Please analyze how thorough the code review was and suggest a review score",
-            "like \"excellent review\", \"poor review\" or \"average review\" for something in the middle.",
-            "Please respond only with the review score.",
-            "Pull Request: ",
             String.format(
                 "PR title: %s",
-                this.title
+                new Pull.Smart(this.pull).title()
             ),
             "PR changes:",
-            this.changes.asString(),
-            "Code review:",
-            this.reviews.asString()
+            this.changes.asString()
         );
     }
 }

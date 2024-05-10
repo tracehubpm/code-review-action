@@ -21,50 +21,35 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package git.tracehub.codereview.action.prompt;
+package git.tracehub.codereview.action.github;
 
 import lombok.RequiredArgsConstructor;
 import org.cactoos.Text;
 
 /**
- * Analysis prompt.
+ * Templated feedback with a review score.
  *
- * @since 0.0.0
+ * @since 0.1.24
  */
 @RequiredArgsConstructor
-public final class AnalysisPrompt implements Text {
+public final class WithScore implements Text {
 
     /**
-     * Pull request.
+     * Origin text.
      */
-    private final Text changes;
+    private final Text origin;
 
     /**
-     * Pull request title.
+     * Score.
      */
-    private final String title;
-
-    /**
-     * Pull request reviews.
-     */
-    private final Text reviews;
+    private final String score;
 
     @Override
     public String asString() throws Exception {
         return String.join(
             "\n",
-            "Please analyze how thorough the code review was and suggest a review score",
-            "like \"excellent review\", \"poor review\" or \"average review\" for something in the middle.",
-            "Please respond only with the review score.",
-            "Pull Request: ",
-            String.format(
-                "PR title: %s",
-                this.title
-            ),
-            "PR changes:",
-            this.changes.asString(),
-            "Code review:",
-            this.reviews.asString()
+            this.score,
+            this.origin.asString()
         );
     }
 }
