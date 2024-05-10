@@ -55,9 +55,9 @@ final class FeedbackInPullITCase {
     void postsSimpleFeedback() throws Exception {
         final Github github = new GhIdentity().value();
         final Pull pull = github.repos()
-            .get(new Coordinates.Simple("h1alexbel/test"))
+            .get(new Coordinates.Simple("tracehubpm/test"))
             .pulls()
-            .get(275);
+            .get(2);
         new FeedbackInPull(
             new StartWithNickname(
                 "h1alexbel",

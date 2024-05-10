@@ -56,9 +56,9 @@ final class AnalysisRoutineITCase {
         final String model = System.getProperty("INPUT_DEEPINFRA_MODEL");
         final Github github = new GhIdentity().value();
         final Pull pull = github.repos()
-            .get(new Coordinates.Simple("h1alexbel/test"))
+            .get(new Coordinates.Simple("tracehubpm/test"))
             .pulls()
-            .get(783);
+            .get(1);
         final String approver = "h1alexbel";
         new AnalysisRoutine(token, approver, deep).exec(pull, model);
         final String posted = new Comment.Smart(
