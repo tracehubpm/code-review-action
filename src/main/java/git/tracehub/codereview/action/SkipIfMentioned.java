@@ -27,7 +27,7 @@ import com.jcabi.github.Pull;
 import com.jcabi.log.Logger;
 import java.util.Collection;
 import lombok.RequiredArgsConstructor;
-import org.cactoos.Proc;
+import org.cactoos.BiProc;
 import org.cactoos.Scalar;
 
 /**
@@ -36,7 +36,7 @@ import org.cactoos.Scalar;
  * @since 0.1.23
  */
 @RequiredArgsConstructor
-public class SkipIfMentioned implements Proc<Pull> {
+public class SkipIfMentioned implements BiProc<Pull, String> {
 
     /**
      * Authors to skip.
@@ -46,10 +46,10 @@ public class SkipIfMentioned implements Proc<Pull> {
     /**
      * Routine to run.
      */
-    private final Proc<Pull> routine;
+    private final BiProc<Pull, String> routine;
 
     @Override
-    public final void exec(final Pull pull) throws Exception {
+    public final void exec(final Pull pull, final String param) throws Exception {
         final String author = new Pull.Smart(pull).author().login();
         if (this.mentions.value().contains(author)) {
             Logger.info(
@@ -58,7 +58,7 @@ public class SkipIfMentioned implements Proc<Pull> {
                 author
             );
         } else {
-            this.routine.exec(pull);
+            this.routine.exec(pull, param);
         }
     }
 }

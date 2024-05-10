@@ -84,12 +84,15 @@ public final class Entry {
             pull.number(),
             title
         );
-        new SkipIfTooSmall(
-            new MinLines(),
-            new AnalysisRoutine(
-                token,
-                approver,
-                System.getenv().get("INPUT_DEEPINFRA_TOKEN")
+        new SkipIfMentioned(
+            new SkipAuthors(),
+            new SkipIfTooSmall(
+                new MinLines(),
+                new AnalysisRoutine(
+                    token,
+                    approver,
+                    System.getenv().get("INPUT_DEEPINFRA_TOKEN")
+                )
             )
         ).exec(
             pull,

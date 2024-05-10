@@ -47,8 +47,8 @@ final class SkipIfMentionedTest {
         final AtomicBoolean skipped = new AtomicBoolean(true);
         new SkipIfMentioned(
             new SkipAuthors("jeff", "not-jeff"),
-            ignored -> skipped.set(false)
-        ).exec(pull);
+            (a, b) -> skipped.set(false)
+        ).exec(pull, "meh");
         MatcherAssert.assertThat(
             "Skipped flag should be 'true', but was '%s'".formatted(skipped.get()),
             skipped.get(),
@@ -62,11 +62,11 @@ final class SkipIfMentionedTest {
         final AtomicBoolean skipped = new AtomicBoolean(true);
         new SkipIfMentioned(
             new SkipAuthors(Collections.emptyList()),
-            ignored -> {
+            (a, b) -> {
                 Logger.info(this, "Processing pr...");
                 skipped.set(false);
             }
-        ).exec(pull);
+        ).exec(pull, "meh");
         MatcherAssert.assertThat(
             "Skipped flag should be 'false', but was '%s'".formatted(skipped.get()),
             skipped.get(),
