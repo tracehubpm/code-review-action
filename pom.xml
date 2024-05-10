@@ -140,6 +140,12 @@ SOFTWARE.
       <version>${logback-classic.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.junit-pioneer</groupId>
+      <artifactId>junit-pioneer</artifactId>
+      <version>2.2.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit-api.version}</version>
@@ -238,6 +244,10 @@ SOFTWARE.
             <include>**/*Spec.*</include>
             <include>**/*Test.*</include>
           </includes>
+          <argLine>
+            --add-opens java.base/java.util=ALL-UNNAMED
+            --add-opens java.base/java.lang=ALL-UNNAMED
+          </argLine>
           <excludedGroups>simulation</excludedGroups>
         </configuration>
       </plugin>

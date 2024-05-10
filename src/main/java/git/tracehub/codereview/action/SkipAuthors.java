@@ -23,42 +23,66 @@
  */
 package git.tracehub.codereview.action;
 
-import com.jcabi.github.Pull;
-import com.jcabi.log.Logger;
 import java.util.Collection;
-import lombok.RequiredArgsConstructor;
-import org.cactoos.Proc;
+import java.util.Collections;
+import java.util.List;
+import java.util.regex.Pattern;
 import org.cactoos.Scalar;
+import org.cactoos.list.ListOf;
 
 /**
- * Skip pull request if author is excluded.
+ * SkipAuthors system environment variable.
  *
  * @since 0.1.23
  */
-@RequiredArgsConstructor
-public class SkipIfMentioned implements Proc<Pull> {
+public final class SkipAuthors implements Scalar<Collection<String>> {
+
+    /**
+     * Regex to match '[' ']' and '"' chars.
+     */
+    private static final Pattern ARRAY_TOKENS = Pattern.compile("[\\[\\]\"]");
 
     /**
      * Authors to skip.
      */
-    private final Scalar<Collection<String>> mentions;
+    private final List<String> authors;
 
     /**
-     * Routine to run.
+     * Primary ctor.
+     *
+     * @param skip Authors which will be skipped.
      */
-    private final Proc<Pull> routine;
+    SkipAuthors(final List<String> skip) {
+        this.authors = skip;
+    }
+
+    /**
+     * Vararg ctor.
+     *
+     * @param skip Authors which will be skipped.
+     */
+    SkipAuthors(final String... skip) {
+        this(new ListOf<>(skip));
+    }
 
     @Override
-    public final void exec(final Pull pull) throws Exception {
-        final String author = new Pull.Smart(pull).author().login();
-        if (this.mentions.value().contains(author)) {
-            Logger.info(
-                this,
-                "Skipping pull request, since author '%s' is excluded",
-                author
-            );
+    public Collection<String> value() {
+        final Collection<String> result;
+        if (this.authors.isEmpty()) {
+            final String env = System.getenv().get("INPUT_SKIP_AUTHORS");
+            if (env == null) {
+                result = Collections.emptyList();
+            } else {
+                result = new ListOf<>(
+                    SkipAuthors.ARRAY_TOKENS
+                        .matcher(env)
+                        .replaceAll("")
+                        .split(",")
+                );
+            }
         } else {
-            this.routine.exec(pull);
+            result = Collections.unmodifiableCollection(this.authors);
         }
+        return result;
     }
 }

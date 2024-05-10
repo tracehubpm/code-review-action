@@ -28,7 +28,6 @@ import com.jcabi.log.Logger;
 import git.tracehub.codereview.action.extentions.PullRequestExtension;
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.cactoos.list.ListOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsNot;
 import org.junit.jupiter.api.Test;
@@ -47,7 +46,7 @@ final class SkipIfMentionedTest {
     void skipsWhenAuthorMentioned(final Pull pull) throws Exception {
         final AtomicBoolean skipped = new AtomicBoolean(true);
         new SkipIfMentioned(
-            new ListOf<>("jeff", "not-jeff"),
+            new SkipAuthors("jeff", "not-jeff"),
             ignored -> skipped.set(false)
         ).exec(pull);
         MatcherAssert.assertThat(
@@ -62,7 +61,7 @@ final class SkipIfMentionedTest {
     void processesAuthorMentioned(final Pull pull) throws Exception {
         final AtomicBoolean skipped = new AtomicBoolean(true);
         new SkipIfMentioned(
-            Collections.emptyList(),
+            new SkipAuthors(Collections.emptyList()),
             ignored -> {
                 Logger.info(this, "Processing pr...");
                 skipped.set(false);
