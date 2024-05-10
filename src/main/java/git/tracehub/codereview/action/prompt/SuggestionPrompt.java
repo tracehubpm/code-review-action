@@ -48,7 +48,7 @@ public final class SuggestionPrompt implements Text {
     public String asString() throws Exception {
         return String.join(
             "\n",
-            "Code review was not excellent, please post one suggestion for code reviewer",
+            "Code review was not excellent, please post one small suggestion (30 words is a max) for code reviewer",
             "what he/she can improve in the future.",
             "Start suggestion with text \"I would recommend ...\"",
             "Code review:",

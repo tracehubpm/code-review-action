@@ -38,7 +38,7 @@ final class AnalyzedWithTest {
     @Test
     void tagsResponse() throws Exception {
         final String tagged = new AnalyzedWith(
-            new FakeModel(), "fake-gpt-4"
+            new FakeModel().completion(), "fake-gpt-4"
         ).asString();
         final String expected =
             "This is a fake completion performed by"
