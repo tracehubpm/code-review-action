@@ -96,6 +96,7 @@ SOFTWARE.
     <logcaptor.version>2.9.2</logcaptor.version>
     <logback-classic.version>1.5.6</logback-classic.version>
     <ghquota.version>0.0.1</ghquota.version>
+    <junit-pioneer.version>2.2.0</junit-pioneer.version>
   </properties>
   <dependencies>
     <dependency>
@@ -138,6 +139,12 @@ SOFTWARE.
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>${logback-classic.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit-pioneer</groupId>
+      <artifactId>junit-pioneer</artifactId>
+      <version>${junit-pioneer.version}</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -238,6 +245,10 @@ SOFTWARE.
             <include>**/*Spec.*</include>
             <include>**/*Test.*</include>
           </includes>
+          <argLine>
+            --add-opens java.base/java.util=ALL-UNNAMED
+            --add-opens java.base/java.lang=ALL-UNNAMED
+          </argLine>
           <excludedGroups>simulation</excludedGroups>
         </configuration>
       </plugin>
