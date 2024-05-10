@@ -29,6 +29,7 @@ import git.tracehub.codereview.action.deep.AnalyzedWith;
 import git.tracehub.codereview.action.deep.CompleteJson;
 import git.tracehub.codereview.action.deep.DeepInfraRequest;
 import git.tracehub.codereview.action.deep.DeepModel;
+import git.tracehub.codereview.action.deep.Model;
 import git.tracehub.codereview.action.deep.Simple;
 import git.tracehub.codereview.action.github.FeedbackInPull;
 import git.tracehub.codereview.action.github.FixedReviews;
@@ -36,11 +37,15 @@ import git.tracehub.codereview.action.github.GhRequest;
 import git.tracehub.codereview.action.github.JsonReviews;
 import git.tracehub.codereview.action.github.PullChanges;
 import git.tracehub.codereview.action.github.StartWithNickname;
+import git.tracehub.codereview.action.github.WithScore;
 import git.tracehub.codereview.action.github.WithComments;
 import git.tracehub.codereview.action.prompt.AnalysisPrompt;
+import git.tracehub.codereview.action.prompt.SuggestionPrompt;
 import git.tracehub.codereview.action.prompt.SystemPrompt;
 import git.tracehub.codereview.action.prompt.TextChanges;
+import git.tracehub.codereview.action.prompt.TextPull;
 import git.tracehub.codereview.action.prompt.TextReviews;
+import java.util.Locale;
 import javax.json.JsonArray;
 import lombok.RequiredArgsConstructor;
 import org.cactoos.BiProc;
@@ -84,28 +89,68 @@ public final class AnalysisRoutine implements BiProc<Pull, String> {
             new TextReviews(reviews)
         ).asString();
         Logger.info(this, "compiled user prompt: %s", prompt);
-        new FeedbackInPull(
-            new StartWithNickname(
-                this.approver,
-                new AnalyzedWith(
-                    new DeepModel(
-                        new DeepInfraRequest(
-                            this.deepinfra,
-                            new CompleteJson(
-                                new Simple(
-                                    model,
-                                    0.7,
-                                    512
-                                ),
-                                system,
-                                prompt
-                            )
-                        )
+        final Model analysis = new DeepModel(
+            new DeepInfraRequest(
+                this.deepinfra,
+                new CompleteJson(
+                    new Simple(
+                        model,
+                        0.7,
+                        512
                     ),
-                    model
+                    system,
+                    prompt
                 )
-            ),
-            pull
-        ).deliver();
+            )
+        );
+        final String score = analysis.completion();
+        Logger.info(this, "Suggested review score is %s", score);
+        if (score.toLowerCase(Locale.ROOT).contains("excellent")) {
+            new FeedbackInPull(
+                new StartWithNickname(
+                    this.approver,
+                    new AnalyzedWith(
+                        analysis,
+                        model
+                    )
+                ),
+                pull
+            ).deliver();
+        } else {
+            new FeedbackInPull(
+                new StartWithNickname(
+                    this.approver,
+                    new WithScore(
+                        new AnalyzedWith(
+                            new DeepModel(
+                                new DeepInfraRequest(
+                                    this.deepinfra,
+                                    new CompleteJson(
+                                        new Simple(
+                                            model,
+                                            0.7,
+                                            512
+                                        ),
+                                        system,
+                                        new SuggestionPrompt(
+                                            new TextReviews(reviews),
+                                            new TextPull(
+                                                pull,
+                                                new TextChanges(
+                                                    new PullChanges(pull)
+                                                )
+                                            )
+                                        ).asString()
+                                    )
+                                )
+                            ),
+                            model
+                        ),
+                        score
+                    )
+                ),
+                pull
+            ).deliver();
+        }
     }
 }

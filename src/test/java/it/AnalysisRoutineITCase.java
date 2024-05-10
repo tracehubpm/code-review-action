@@ -43,7 +43,7 @@ import org.llorllale.cactoos.matchers.IsTrue;
 /**
  * Integration test case for {@link AnalysisRoutine}.
  *
- * @since 0.0.0
+ * @since 0.1.23
  */
 final class AnalysisRoutineITCase {
 
@@ -59,12 +59,6 @@ final class AnalysisRoutineITCase {
             .get(new Coordinates.Simple("h1alexbel/test"))
             .pulls()
             .get(783);
-        pull.comments().post(
-            "nice, I liked that!",
-            "24bb9d7c34ab84f69752c41a84b9059ef39c9c89",
-            ".trace/jobs/test-for-response-with-new-pull-request.yml",
-            1
-        );
         final String approver = "h1alexbel";
         new AnalysisRoutine(token, approver, deep).exec(pull, model);
         final String posted = new Comment.Smart(
