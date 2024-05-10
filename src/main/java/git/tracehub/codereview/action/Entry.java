@@ -86,7 +86,14 @@ public final class Entry {
         );
         new SkipIfTooSmall(
             new MinLines(),
-            new AnalysisRoutine(token, approver)
-        ).exec(pull);
+            new AnalysisRoutine(
+                token,
+                approver,
+                System.getenv().get("INPUT_DEEPINFRA_TOKEN")
+            )
+        ).exec(
+            pull,
+            System.getenv().get("INPUT_DEEPINFRA_MODEL")
+        );
     }
 }

@@ -50,8 +50,8 @@ final class SkipIfTooSmallTest {
         final AtomicInteger increment = new AtomicInteger(1);
         new SkipIfTooSmall(
             () -> 0,
-            pull -> increment.getAndIncrement()
-        ).exec(created);
+            (pull, model) -> increment.getAndIncrement()
+        ).exec(created, "testing-model");
         final int expected = 2;
         MatcherAssert.assertThat(
             String.format(
@@ -71,9 +71,9 @@ final class SkipIfTooSmallTest {
         final LogCaptor capt = LogCaptor.forClass(SkipIfTooSmall.class);
         new SkipIfTooSmall(
             () -> 15,
-            pull -> {
+            (pull, model) -> {
             }
-        ).exec(mock);
+        ).exec(mock, "mock-model");
         final List<String> infos = capt.getInfoLogs();
         final List<String> expected = new ListOf<>(
             "Skipping pull request #0 since changes count 3 less than min_lines 15"
@@ -96,9 +96,9 @@ final class SkipIfTooSmallTest {
         final LogCaptor capt = LogCaptor.forClass(SkipIfTooSmall.class);
         new SkipIfTooSmall(
             () -> 15,
-            pull -> {
+            (pull, model) -> {
             }
-        ).exec(mock);
+        ).exec(mock, "mock-model");
         final List<String> infos = capt.getInfoLogs();
         final List<String> expected = new ListOf<>(
             "Pull request #0 has enough number of lines (31), min: 15"

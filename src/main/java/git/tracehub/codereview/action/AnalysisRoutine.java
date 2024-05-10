@@ -43,36 +43,36 @@ import git.tracehub.codereview.action.prompt.TextChanges;
 import git.tracehub.codereview.action.prompt.TextReviews;
 import javax.json.JsonArray;
 import lombok.RequiredArgsConstructor;
-import org.cactoos.Proc;
+import org.cactoos.BiProc;
 
 /**
  * Analysis routine.
  *
  * @since 0.0.0
- * @todo #60:30min Create integration test case for AnalysisRoutine.
- *  We should create integration test case for whole analysis routine.
- *  Profiles in maven are ready and packed with all necessary env variables.
- *  Let's create it and run on reasonable pull request in h1alexbel/test repo.
- *  Don't forget to remove this puzzle.
  */
 @RequiredArgsConstructor
-public final class AnalysisRoutine implements Proc<Pull> {
+public final class AnalysisRoutine implements BiProc<Pull, String> {
 
     /**
      * GitHub token.
      */
-    private final String token;
+    private final String github;
 
     /**
      * Approver.
      */
     private final String approver;
 
+    /**
+     * Deepinfra token.
+     */
+    private final String deepinfra;
+
     @Override
-    public void exec(final Pull pull) throws Exception {
+    public void exec(final Pull pull, final String model) throws Exception {
         final JsonArray reviews = new WithComments(
-            new FixedReviews(new JsonReviews(pull, new GhRequest(this.token))),
-            new GhRequest(this.token),
+            new FixedReviews(new JsonReviews(pull, new GhRequest(this.github))),
+            new GhRequest(this.github),
             pull
         ).value();
         Logger.info(this, "found reviews: %s", reviews);
@@ -84,14 +84,13 @@ public final class AnalysisRoutine implements Proc<Pull> {
             new TextReviews(reviews)
         ).asString();
         Logger.info(this, "compiled user prompt: %s", prompt);
-        final String model = System.getenv().get("INPUT_DEEPINFRA_MODEL");
         new FeedbackInPull(
             new StartWithNickname(
                 this.approver,
                 new AnalyzedWith(
                     new DeepModel(
                         new DeepInfraRequest(
-                            System.getenv().get("INPUT_DEEPINFRA_TOKEN"),
+                            this.deepinfra,
                             new CompleteJson(
                                 new Simple(
                                     model,
