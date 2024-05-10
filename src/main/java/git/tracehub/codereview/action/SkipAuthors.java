@@ -83,6 +83,6 @@ public final class SkipAuthors implements Scalar<Collection<String>> {
         } else {
             result = Collections.unmodifiableCollection(this.authors);
         }
-        return result;
+        return Collections.unmodifiableCollection(result);
     }
 }
