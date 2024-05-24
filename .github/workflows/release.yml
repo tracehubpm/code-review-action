@@ -21,7 +21,7 @@
 # SOFTWARE.
 ---
 name: Docker release
-on:
+'on':
   push:
     tags:
       - '*'
