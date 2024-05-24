@@ -21,11 +21,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-/*
- * @todo #101:45min Add integration test for pr.
- *  SkipIfMentioned should be applied on incoming pull request
- *  to check author on exclusion. It should be an integration test.
- */
 package git.tracehub.codereview.action;
 
 import com.jcabi.github.Pull;
