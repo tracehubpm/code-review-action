@@ -24,6 +24,10 @@ inputs:
   min_lines:
     description: 'Minimal amount of lines in the pull request to get analyzed by this action'
     required: false
+  skip_authors:
+    description: 'GitHub logins of authors, whose pull requests you want to skip from analyzing'
+    default: '["renovate", "dependabot"]'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
