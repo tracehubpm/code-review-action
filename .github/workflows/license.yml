@@ -20,31 +20,38 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: codecov
+name: license
 'on':
   push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
 jobs:
-  codecov:
+  license:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: 17
-      - uses: actions/cache@v4
-        with:
-          path: ~/.m2/repository
-          key: maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            maven-
+          fetch-depth: 0
       - run: |
-          mvn clean install -Pjacoco --errors --batch-mode
-      - uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./target/site/jacoco/jacoco.xml
-          fail_ci_if_error: false
+          set -e
+          find . -type f \( \
+            -name "LICENSE.*" \
+            -o -name "*.sh" \
+            -o -name "*.yml" \
+            -o -name "*.xml" \
+            -o -name "*.xsl" \
+            -o -name "*.xsd" \
+            -o -name "*.ini" \
+            -o -name "*.java" \
+            -o -name "*.g4" \
+            -o -name "*.properties" \) > files.txt
+          header="Copyright (c) 2024 Tracehub"
+          failed="false"
+          while IFS= read -r file; do
+            if ! grep -q "$header" "$file"; then
+              failed="true"
+              echo "No license in: $file"
+            fi
+          done < files.txt
+          if [ "${failed}" == "true" ]; then
+            exit 1
+          fi
