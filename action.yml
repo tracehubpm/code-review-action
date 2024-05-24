@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ---
-name: 'code-review-action'
+name: 'code-review-quality-action'
 description: 'Quality of Code Review Checker'
 author: 'Aliaksei Bialiauski <aliaksei.bialiauski@hey.com>'
 branding:
