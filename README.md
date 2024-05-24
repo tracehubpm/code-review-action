@@ -87,6 +87,8 @@ These are the parameters you can use/override:
 * `min_lines`: Minimal amount of lines in the pull request to get analyzed
 by this action, pull requests with fewer lines than provided `min_size`
 won't be processed.
+* `skip_authors`: GitHub logins of authors, whose pull requests you want to
+skip from analyzing. By default, `renovatebot` and `dependabot` are ignored.
 
 ### Analysis Method
 

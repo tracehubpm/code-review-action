@@ -61,7 +61,7 @@ public final class SkipAuthors implements Scalar<Collection<String>> {
      *
      * @param skip Authors which will be skipped.
      */
-    SkipAuthors(final String... skip) {
+    public SkipAuthors(final String... skip) {
         this(new ListOf<>(skip));
     }
 
