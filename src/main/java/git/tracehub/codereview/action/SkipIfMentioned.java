@@ -59,7 +59,8 @@ public class SkipIfMentioned implements BiProc<Pull, String> {
         if (this.mentions.value().contains(author)) {
             Logger.info(
                 this,
-                "Skipping pull request, since author '%s' is excluded",
+                "Skipping pull request #%d, since author @%s is excluded",
+                pull.number(),
                 author
             );
         } else {
