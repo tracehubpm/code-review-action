@@ -15,11 +15,12 @@
 Code Review Quality Checker.
 
 **Motivation**.
-[Code review](https://en.wikipedia.org/wiki/Code_review) is an important practice for every software team that cares about
-the quality of its software product. On [GitHub](https://github.com),
-code reviews are usually done within [pull requests](https://github.com/features/code-review),
-where one programmer (reviewer) makes comments asking another programmer
-(author) to improve the code just submitted in a branch. However, [very often](https://www.yegor256.com/2015/02/09/serious-code-reviewer.html),
+[Code review](https://en.wikipedia.org/wiki/Code_review) is an important
+practice for every software team that cares about the quality of its software
+product. On [GitHub](https://github.com), code reviews are usually done within
+[pull requests](https://github.com/features/code-review), where one programmer
+(reviewer) makes comments asking another programmer (author) to improve the
+code just submitted in a branch. However, [very often](https://www.yegor256.com/2015/02/09/serious-code-reviewer.html),
 the quality of code review may be rather low: [reviewers just say "LGTM"](https://www.l3r8y.ru/2023/08/06/dont-be-shy-cry#dont-upset-people)
 and the pull request gets merged. This GitHub action, with the help of LLMs,
 analyzes how thorough the code review was and posts a number of suggestions
@@ -27,9 +28,10 @@ for the reviewer so that they can improve in the future.
 Besides that, this action suggests "review score," like
 "excellent review" or "poor review."
 
-### How to use
+## How to use
 
 Use it like this:
+
 ```yml
 name: code-review
 on:
@@ -147,7 +149,10 @@ mvn clean install -Pjacoco
 If you want to run simulation integration tests (annotated with `@Tag("simulation")`):
 
 ```shell
-mvn clean install -Psimulation -DINPUT_GITHUB_TOKEN=... -DINPUT_DEEPINFRA_TOKEN=... -DINPUT_DEEPINFRA_MODEL=...
+mvn clean install -Psimulation \
+ -DINPUT_GITHUB_TOKEN=...\
+ -DINPUT_DEEPINFRA_TOKEN=...\
+ -DINPUT_DEEPINFRA_MODEL=...
 ```
 
 For `INPUT_GITHUB_TOKEN` provide your GitHub [token](https://github.com/settings/tokens) with write permissions
