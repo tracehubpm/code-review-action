@@ -155,8 +155,8 @@ mvn clean install -Psimulation \
  -DINPUT_DEEPINFRA_MODEL=...
 ```
 
-For `INPUT_GITHUB_TOKEN` provide your GitHub [token](https://github.com/settings/tokens) with write permissions
-to the next repositories:
+For `INPUT_GITHUB_TOKEN` provide your GitHub [token](https://github.com/settings/tokens)
+with write permissions to the next repositories:
 
 * [tracehubpm/test](https://github.com/tracehubpm/test)
 
