@@ -36,8 +36,8 @@ jobs:
     name: test
     strategy:
       matrix:
-        os: [ubuntu-20.04]
-        java: [17]
+        os: [ ubuntu-20.04 ]
+        java: [ 17 ]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -55,8 +55,8 @@ jobs:
     name: simulation tests
     strategy:
       matrix:
-        os: [ubuntu-20.04]
-        java: [17]
+        os: [ ubuntu-20.04 ]
+        java: [ 17 ]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4

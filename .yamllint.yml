@@ -29,4 +29,4 @@ rules:
     max-spaces-inside: 2
   truthy:
     level: warning
-    allowed-values: ['on', 'true', 'false', 'yes', 'no']
+    allowed-values: [ 'on', 'true', 'false', 'yes', 'no' ]
