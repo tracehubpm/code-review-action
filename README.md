@@ -164,4 +164,4 @@ For `INPUT_DEEPINFRA_TOKEN` provide your token from Deep Infra,
 you can obtain it [here](https://deepinfra.com/dash/api_keys).
 For `INPUT_DEEPINFRA_MODEL` pick one of the [available models](https://deepinfra.com/models/text-generation).
 
-You will need Maven 3.8+ and Java 17+.
+You will need Maven 3.8+ and Java 21+.

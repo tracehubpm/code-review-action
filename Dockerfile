@@ -22,7 +22,7 @@
 # SOFTWARE.
 #
 
-FROM openjdk:17-jdk
+FROM openjdk:21-jdk
 WORKDIR /app
 COPY ./target/code-review-*-jar-with-dependencies.jar /app/app.jar
 CMD ["java", "-jar", "/app/app.jar"]
