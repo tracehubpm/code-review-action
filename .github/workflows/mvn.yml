@@ -53,6 +53,7 @@ jobs:
       - run: mvn clean install -Pjacoco --errors --batch-mode
   simulation:
     name: simulation tests
+    if: github.ref == 'refs/heads/master'
     strategy:
       matrix:
         os: [ ubuntu-20.04 ]
