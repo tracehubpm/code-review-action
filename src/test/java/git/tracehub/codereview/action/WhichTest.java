@@ -75,6 +75,7 @@ final class WhichTest {
     @Test
     @ClearEnvironmentVariable(key = "INPUT_OPENAI_TOKEN")
     @ClearEnvironmentVariable(key = "INPUT_DEEPINFRA_TOKEN")
+    @SuppressWarnings("JTCOP.RuleAssertionMessage")
     void raisesErrorIfEmptyEnv() {
         new Assertion<>(
             "Which does not throw exception, but should",
