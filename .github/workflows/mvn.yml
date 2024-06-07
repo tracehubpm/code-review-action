@@ -31,10 +31,7 @@ name: mvn
 concurrency:
   group: mvn-${{ github.ref }}
   cancel-in-progress: true
-permissions:
-  pull-requests: write
-  issues: write
-  contents: write
+permissions: write-all
 jobs:
   test:
     name: test
