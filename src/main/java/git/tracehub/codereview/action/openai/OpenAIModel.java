@@ -38,7 +38,7 @@ import org.cactoos.Scalar;
  * @since 0.2.0
  */
 @RequiredArgsConstructor
-public final class OpenAIModel implements Model {
+public final class OpenAiModel implements Model {
 
     /**
      * Request.
