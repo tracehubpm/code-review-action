@@ -53,7 +53,6 @@ final class AnalysisRoutineITCase {
     @Test
     void analyzesCodeReview() throws Exception {
         final String token = System.getProperty("INPUT_GITHUB_TOKEN");
-        final String deep = System.getProperty("INPUT_DEEPINFRA_TOKEN");
         final String model = System.getProperty("INPUT_DEEPINFRA_MODEL");
         final Github github = new GhIdentity().value();
         final Pull pull = github.repos()
@@ -67,7 +66,7 @@ final class AnalysisRoutineITCase {
             new Scalar<String>() {
                 @Override
                 public String value() throws Exception {
-                    return deep;
+                    return "INPUT_DEEPINFRA_TOKEN";
                 }
             }).exec(pull, model);
         final String posted = new Comment.Smart(

@@ -49,11 +49,11 @@ import org.cactoos.Scalar;
 /**
  * Analysis routine.
  *
- * @since 0.0.0
  * @todo #88:90min Create integration tests with OpenAIModel.
- *   We should create an integration test cases for OpenAI integration objects.
- *   Let's do them the similar way as DeepModelITCase.java. Don't forget to
- *   remove this puzzle.
+ * We should create an integration test cases for OpenAI integration objects.
+ * Let's do them the similar way as DeepModelITCase.java. Don't forget to
+ * remove this puzzle.
+ * @since 0.0.0
  */
 @RequiredArgsConstructor
 public final class AnalysisRoutine implements BiProc<Pull, String> {
@@ -90,7 +90,10 @@ public final class AnalysisRoutine implements BiProc<Pull, String> {
         ).asString();
         Logger.info(this, "compiled user prompt: %s", prompt);
         final String platf = this.platform.value();
-        final String credential = System.getenv().get(platf);
+        String credential = System.getenv().get(platf);
+        if (credential == null) {
+            credential = System.getProperty(platf);
+        }
         final Model analysis = new AutoModel(
             credential, this.platform, system, prompt
         ).value();
