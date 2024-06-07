@@ -34,7 +34,7 @@ concurrency:
 permissions:
   pull-requests: write
   issues: write
-  contents: read
+  contents: write
 jobs:
   test:
     name: test
