@@ -27,7 +27,7 @@ import git.tracehub.codereview.action.deep.CompleteJson;
 import git.tracehub.codereview.action.deep.DeepInfraRequest;
 import git.tracehub.codereview.action.deep.DeepModel;
 import git.tracehub.codereview.action.deep.Simple;
-import git.tracehub.codereview.action.openai.OpenAIModel;
+import git.tracehub.codereview.action.openai.OpenAiModel;
 import git.tracehub.codereview.action.openai.OpenJson;
 import git.tracehub.codereview.action.openai.OpenRequest;
 import lombok.RequiredArgsConstructor;
@@ -80,7 +80,7 @@ public final class AutoModel implements Scalar<Model> {
                 )
             );
         } else {
-            model = new OpenAIModel(
+            model = new OpenAiModel(
                 new OpenRequest(
                     this.credential,
                     new OpenJson(
