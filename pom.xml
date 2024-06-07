@@ -97,12 +97,13 @@ SOFTWARE.
     <logback-classic.version>1.5.6</logback-classic.version>
     <ghquota.version>0.0.1</ghquota.version>
     <junit-pioneer.version>2.2.0</junit-pioneer.version>
+    <jcabi-github.version>1.9.1</jcabi-github.version>
   </properties>
   <dependencies>
     <dependency>
       <groupId>com.jcabi</groupId>
       <artifactId>jcabi-github</artifactId>
-      <!-- version from parent POM -->
+       <version>${jcabi-github.version}</version>
     </dependency>
     <dependency>
       <groupId>org.hamcrest</groupId>
