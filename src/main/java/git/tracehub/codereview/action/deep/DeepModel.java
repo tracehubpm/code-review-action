@@ -25,6 +25,7 @@ package git.tracehub.codereview.action.deep;
 
 import com.jcabi.http.Request;
 import com.jcabi.log.Logger;
+import git.tracehub.codereview.action.Model;
 import java.io.StringReader;
 import javax.json.Json;
 import javax.json.JsonObject;

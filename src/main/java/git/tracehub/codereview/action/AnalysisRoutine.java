@@ -26,11 +26,6 @@ package git.tracehub.codereview.action;
 import com.jcabi.github.Pull;
 import com.jcabi.log.Logger;
 import git.tracehub.codereview.action.deep.AnalyzedWith;
-import git.tracehub.codereview.action.deep.CompleteJson;
-import git.tracehub.codereview.action.deep.DeepInfraRequest;
-import git.tracehub.codereview.action.deep.DeepModel;
-import git.tracehub.codereview.action.deep.Model;
-import git.tracehub.codereview.action.deep.Simple;
 import git.tracehub.codereview.action.github.FeedbackInPull;
 import git.tracehub.codereview.action.github.FixedReviews;
 import git.tracehub.codereview.action.github.GhRequest;
@@ -49,11 +44,16 @@ import java.util.Locale;
 import javax.json.JsonArray;
 import lombok.RequiredArgsConstructor;
 import org.cactoos.BiProc;
+import org.cactoos.Scalar;
 
 /**
  * Analysis routine.
  *
  * @since 0.0.0
+ * @todo #88:90min Create integration tests with OpenAIModel.
+ *   We should create an integration test cases for OpenAI integration objects.
+ *   Let's do them the similar way as DeepModelITCase.java. Don't forget to
+ *   remove this puzzle.
  */
 @RequiredArgsConstructor
 public final class AnalysisRoutine implements BiProc<Pull, String> {
@@ -69,9 +69,9 @@ public final class AnalysisRoutine implements BiProc<Pull, String> {
     private final String approver;
 
     /**
-     * Deepinfra token.
+     * Platform token.
      */
-    private final String deepinfra;
+    private final Scalar<String> platform;
 
     @Override
     public void exec(final Pull pull, final String model) throws Exception {
@@ -89,20 +89,11 @@ public final class AnalysisRoutine implements BiProc<Pull, String> {
             new TextReviews(reviews)
         ).asString();
         Logger.info(this, "compiled user prompt: %s", prompt);
-        final Model analysis = new DeepModel(
-            new DeepInfraRequest(
-                this.deepinfra,
-                new CompleteJson(
-                    new Simple(
-                        model,
-                        0.7,
-                        512
-                    ),
-                    system,
-                    prompt
-                )
-            )
-        );
+        final String platf = this.platform.value();
+        final String credential = System.getenv().get(platf);
+        final Model analysis = new AutoModel(
+            credential, this.platform, system, prompt
+        ).value();
         final String score = analysis.completion();
         if (score.toLowerCase(Locale.ROOT).contains("excellent")) {
             new FeedbackInPull(
@@ -121,28 +112,20 @@ public final class AnalysisRoutine implements BiProc<Pull, String> {
                     this.approver,
                     new WithScore(
                         new AnalyzedWith(
-                            new DeepModel(
-                                new DeepInfraRequest(
-                                    this.deepinfra,
-                                    new CompleteJson(
-                                        new Simple(
-                                            model,
-                                            0.7,
-                                            512
-                                        ),
-                                        system,
-                                        new SuggestionPrompt(
-                                            new TextReviews(reviews),
-                                            new TextPull(
-                                                pull,
-                                                new TextChanges(
-                                                    new PullChanges(pull)
-                                                )
-                                            )
-                                        ).asString()
+                            new AutoModel(
+                                credential,
+                                this.platform,
+                                system,
+                                new SuggestionPrompt(
+                                    new TextReviews(reviews),
+                                    new TextPull(
+                                        pull,
+                                        new TextChanges(
+                                            new PullChanges(pull)
+                                        )
                                     )
-                                )
-                            ).completion(),
+                                ).asString()
+                            ).value().completion(),
                             model
                         ),
                         score

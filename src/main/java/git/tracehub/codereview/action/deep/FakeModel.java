@@ -23,6 +23,8 @@
  */
 package git.tracehub.codereview.action.deep;
 
+import git.tracehub.codereview.action.Model;
+
 /**
  * Fake LLM.
  *
@@ -31,7 +33,7 @@ package git.tracehub.codereview.action.deep;
 public final class FakeModel implements Model {
 
     @Override
-    public String completion() throws Exception {
+    public String completion() {
         return "This is a fake completion performed by FakeModel.java";
     }
 }

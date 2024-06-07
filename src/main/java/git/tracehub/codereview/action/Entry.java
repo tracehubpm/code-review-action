@@ -91,12 +91,12 @@ public final class Entry {
                 new AnalysisRoutine(
                     token,
                     approver,
-                    System.getenv().get("INPUT_DEEPINFRA_TOKEN")
+                    new Which()
                 )
             )
         ).exec(
             pull,
-            System.getenv().get("INPUT_DEEPINFRA_MODEL")
+            new AutoRef().asString()
         );
     }
 }

@@ -33,6 +33,7 @@ import git.tracehub.codereview.action.github.GhIdentity;
 import io.github.h1alexbel.ghquota.Quota;
 import java.time.Instant;
 import java.util.Date;
+import org.cactoos.Scalar;
 import org.cactoos.list.ListOf;
 import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.Tag;
@@ -60,7 +61,15 @@ final class AnalysisRoutineITCase {
             .pulls()
             .get(1);
         final String approver = "h1alexbel";
-        new AnalysisRoutine(token, approver, deep).exec(pull, model);
+        new AnalysisRoutine(
+            token,
+            approver,
+            new Scalar<String>() {
+                @Override
+                public String value() throws Exception {
+                    return deep;
+                }
+            }).exec(pull, model);
         final String posted = new Comment.Smart(
             new ListOf<>(
                 new Pull.Smart(pull).issue()
@@ -79,7 +88,7 @@ final class AnalysisRoutineITCase {
         );
         MatcherAssert.assertThat(
             String.format(
-            "Posted feedback %s does not contain model tag, but should be",
+                "Posted feedback %s does not contain model tag, but should be",
                 posted
             ),
             posted.contains(String.format("Analyzed with `%s`", model)),

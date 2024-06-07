@@ -36,6 +36,7 @@ import git.tracehub.codereview.action.github.GhIdentity;
 import io.github.h1alexbel.ghquota.Quota;
 import java.util.List;
 import nl.altindag.log.LogCaptor;
+import org.cactoos.Scalar;
 import org.cactoos.list.ListOf;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
@@ -69,7 +70,12 @@ final class SkipIfMentionedITCase {
                 new AnalysisRoutine(
                     token,
                     github.users().self().login(),
-                    System.getenv().get("INPUT_DEEPINFRA_TOKEN")
+                    new Scalar<String>() {
+                        @Override
+                        public String value() throws Exception {
+                            return System.getenv().get("INPUT_DEEPINFRA_TOKEN");
+                        }
+                    }
                 )
             )
         ).exec(
