@@ -95,7 +95,7 @@ public final class AnalysisRoutine implements BiProc<Pull, String> {
             credential = System.getProperty(platf);
         }
         final Model analysis = new AutoModel(
-            credential, this.platform, system, prompt
+            credential, this.platform, system, prompt, model
         ).value();
         final String score = analysis.completion();
         if (score.toLowerCase(Locale.ROOT).contains("excellent")) {
@@ -127,7 +127,8 @@ public final class AnalysisRoutine implements BiProc<Pull, String> {
                                             new PullChanges(pull)
                                         )
                                     )
-                                ).asString()
+                                ).asString(),
+                                model
                             ).value().completion(),
                             model
                         ),

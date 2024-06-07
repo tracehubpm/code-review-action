@@ -103,7 +103,7 @@ SOFTWARE.
     <dependency>
       <groupId>com.jcabi</groupId>
       <artifactId>jcabi-github</artifactId>
-       <version>${jcabi-github.version}</version>
+      <version>${jcabi-github.version}</version>
     </dependency>
     <dependency>
       <groupId>org.hamcrest</groupId>

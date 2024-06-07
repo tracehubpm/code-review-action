@@ -60,6 +60,11 @@ public final class AutoModel implements Scalar<Model> {
      */
     private final String prompt;
 
+    /**
+     * Model ref.
+     */
+    private final String ref;
+
     @Override
     public Model value() throws Exception {
         final String platf = this.platform.value();
@@ -70,7 +75,7 @@ public final class AutoModel implements Scalar<Model> {
                     this.credential,
                     new CompleteJson(
                         new Simple(
-                            System.getenv().get("INPUT_DEEPINFRA_MODEL"),
+                            this.ref,
                             0.7,
                             512
                         ),
@@ -85,7 +90,7 @@ public final class AutoModel implements Scalar<Model> {
                     this.credential,
                     new OpenJson(
                         new Simple(
-                            System.getenv().get("INPUT_OPENAI_MODEL"),
+                            this.ref,
                             0.7,
                             512
                         ),
