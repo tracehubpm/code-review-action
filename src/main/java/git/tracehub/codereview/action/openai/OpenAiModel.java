@@ -55,7 +55,7 @@ public final class OpenAiModel implements Model {
             )
         ).readObject();
         final String completion = response.getJsonArray("choices")
-            .getFirst()
+            .get(0)
             .asJsonObject()
             .getString("text");
         Logger.info(
