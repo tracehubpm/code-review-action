@@ -49,6 +49,7 @@ jobs:
       - uses: docker://tracehub/code-review-action:latest
         with:
           openai_token: ${{ secrets.OPENAI_TOKEN }}
+          openai_model: gpt-4
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
@@ -74,6 +75,7 @@ jobs:
       - uses: docker://tracehub/code-review-action:latest
         with:
           openai_token: ${{ secrets.OPENAI_TOKEN }}
+          openai_model: gpt-4
           github_token: ${{ secrets.GITHUB_TOKEN }}
           min_lines: 15
 ```
@@ -85,7 +87,7 @@ These are the parameters you can use/override:
 
 * `openai_token`: Open AI API key, you can obtain it [here](https://platform.openai.com/api-keys).
 * `github_token`: GitHub token in order to post comments in the pull request.
-* `openai_model`: Open AI ChatGPT model, the default one is `gpt-4`.
+* `openai_model`: Open AI ChatGPT model.
 * `deepinfra_token`: Deep Infra API key, you can obtain it [here](https://deepinfra.com/dash/api_keys).
 * `deepinfra_model`: Deep Infra API model, check out [all available models](https://deepinfra.com/models/text-generation).
 * `min_lines`: Minimal amount of lines in the pull request to get analyzed
