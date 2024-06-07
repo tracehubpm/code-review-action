@@ -71,7 +71,13 @@ SOFTWARE.
     <url>https://github.com/tracehubpm/code-review-action/tree/master</url>
   </scm>
   <properties>
-    <java.version>21</java.version>
+    <!--
+    @todo #88:45min Invalid target release 21 on rultor build.
+      Let's fix 'invalid target release 21' in rultor builds.
+      Probably we need top update the rultor version.
+      Don't forget to remove this puzzle.
+    -->
+    <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
