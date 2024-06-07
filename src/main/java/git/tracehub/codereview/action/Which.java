@@ -28,7 +28,7 @@ import org.cactoos.Scalar;
 /**
  * Which platform to use.
  *
- * @since 0.2.0
+ * @since 0.3.0
  */
 public final class Which implements Scalar<String> {
 

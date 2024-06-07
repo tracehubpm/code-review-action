@@ -35,7 +35,7 @@ import org.cactoos.Scalar;
 
 /**
  * Auto model.
- * @since 0.2.0
+ * @since 0.3.0
  */
 @RequiredArgsConstructor
 public final class AutoModel implements Scalar<Model> {

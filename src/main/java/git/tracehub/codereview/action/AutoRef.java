@@ -29,7 +29,7 @@ import org.cactoos.Text;
  * Auto model ref.
  *
  * @see AutoModel
- * @since 0.2.0
+ * @since 0.3.0
  */
 public final class AutoRef implements Text {
 

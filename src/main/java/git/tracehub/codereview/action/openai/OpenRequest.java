@@ -32,7 +32,7 @@ import org.cactoos.Scalar;
 /**
  * HTTP request to OpenAI.
  *
- * @since 0.2.0
+ * @since 0.3.0
  */
 @RequiredArgsConstructor
 public final class OpenRequest implements Scalar<Request> {

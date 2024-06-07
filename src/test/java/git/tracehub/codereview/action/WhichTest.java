@@ -34,7 +34,7 @@ import org.llorllale.cactoos.matchers.Throws;
 /**
  * Test case for {@link Which}.
  *
- * @since 0.2.0
+ * @since 0.3.0
  */
 final class WhichTest {
 

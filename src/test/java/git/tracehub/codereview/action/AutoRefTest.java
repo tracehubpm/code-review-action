@@ -32,7 +32,7 @@ import org.junitpioneer.jupiter.SetEnvironmentVariable;
 /**
  * Test case for {@link AutoRef}.
  *
- * @since 0.2.0
+ * @since 0.3.0
  */
 final class AutoRefTest {
 
