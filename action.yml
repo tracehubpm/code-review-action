@@ -32,7 +32,7 @@ inputs:
     required: true
   openai_token:
     description: 'Open AI API key'
-    required: true
+    required: false
   openai_model:
     description: 'Open AI API model'
     required: false
