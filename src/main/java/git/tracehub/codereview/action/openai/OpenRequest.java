@@ -50,7 +50,7 @@ public final class OpenRequest implements Scalar<Request> {
     @Override
     public Request value() throws Exception {
         return new JdkRequest(
-            "https://api.openai.com/v1/completions"
+            "https://api.openai.com/v1/chat/completions"
         ).method("POST")
             .header("Authorization", String.format("Bearer %s", this.token))
             .header("Content-Type", "application/json")
