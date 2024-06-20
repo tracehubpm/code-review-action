@@ -27,6 +27,7 @@ import com.jcabi.aspects.Cacheable;
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
 import com.jcabi.github.mock.MkGithub;
+import com.jcabi.http.wire.RetryWire;
 import com.jcabi.log.Logger;
 import org.cactoos.Scalar;
 
@@ -55,7 +56,7 @@ public final class GhIdentity implements Scalar<Github> {
             github = new MkGithub();
         } else {
             github = new RtGithub(
-                new RtGithub(token).entry()
+                new RtGithub(token).entry().through(RetryWire.class)
             );
         }
         Logger.info(this, "GitHub object instantiated");
